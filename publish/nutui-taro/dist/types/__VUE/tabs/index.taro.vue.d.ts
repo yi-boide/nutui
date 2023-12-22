@@ -1,4 +1,5 @@
-import { VNode, Ref, CSSProperties } from 'vue';
+import { VNode, Ref, CSSProperties, PropType } from 'vue';
+import type { TabsDirection, TabsSize, TabsType } from './types';
 export declare class Title {
     title: string;
     titleSlot?: VNode[];
@@ -6,7 +7,6 @@ export declare class Title {
     disabled: boolean;
     constructor();
 }
-export type TabsSize = 'large' | 'normal' | 'small';
 
 declare type Install<T> = T & {
   install(app: import('vue').App): void;
@@ -21,15 +21,15 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: string;
     };
     direction: {
-        type: StringConstructor;
+        type: PropType<TabsDirection>;
         default: string;
     };
     size: {
-        type: import("vue").PropType<TabsSize>;
+        type: PropType<TabsSize>;
         default: string;
     };
     type: {
-        type: StringConstructor;
+        type: PropType<TabsType>;
         default: string;
     };
     titleScroll: {
@@ -67,10 +67,6 @@ declare const _default: Install< import("vue").DefineComponent<{
     top: {
         type: NumberConstructor;
         default: number;
-    };
-    name: {
-        type: StringConstructor;
-        default: string;
     };
 }, {
     onTouchStart(event: TouchEvent): void;
@@ -127,15 +123,15 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: string;
     };
     direction: {
-        type: StringConstructor;
+        type: PropType<TabsDirection>;
         default: string;
     };
     size: {
-        type: import("vue").PropType<TabsSize>;
+        type: PropType<TabsSize>;
         default: string;
     };
     type: {
-        type: StringConstructor;
+        type: PropType<TabsType>;
         default: string;
     };
     titleScroll: {
@@ -174,17 +170,12 @@ declare const _default: Install< import("vue").DefineComponent<{
         type: NumberConstructor;
         default: number;
     };
-    name: {
-        type: StringConstructor;
-        default: string;
-    };
 }>> & {
     onClick?: ((...args: any[]) => any) | undefined;
     onChange?: ((...args: any[]) => any) | undefined;
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    name: string;
-    type: string;
+    type: TabsType;
     color: string;
     top: number;
     ellipsis: boolean;
@@ -192,7 +183,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     sticky: boolean;
     modelValue: string | number;
     background: string;
-    direction: string;
+    direction: TabsDirection;
     titleScroll: boolean;
     swipeable: boolean;
     autoHeight: boolean;

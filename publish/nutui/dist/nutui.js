@@ -3603,7 +3603,6 @@ const { create: Nc } = W("tabs"), Dc = Nc({
     direction: {
       type: String,
       default: "horizontal"
-      //vertical
     },
     size: {
       type: String,
@@ -3612,7 +3611,6 @@ const { create: Nc } = W("tabs"), Dc = Nc({
     type: {
       type: String,
       default: "line"
-      //card、line、smile
     },
     titleScroll: {
       type: Boolean,
@@ -13550,7 +13548,7 @@ const wy = /* @__PURE__ */ K(yy, [["render", ky]]), { componentName: Cy, create:
       default: 64
     },
     content: {
-      type: String,
+      type: [String, Array],
       default: ""
     },
     fontColor: {
@@ -13616,7 +13614,9 @@ const wy = /* @__PURE__ */ K(yy, [["render", ky]]), { componentName: Cy, create:
         } else if (v) {
           T.textBaseline = "middle", T.textAlign = "center", T.translate(A / 2, C / 2), T.rotate(Math.PI / 180 * Number(i));
           const E = Number(w) * I;
-          T.font = `${y} normal ${g} ${E}px/${C}px ${c}`, T.fillStyle = b, T.fillText(v, 0, 0), T.restore(), t.base64Url = k.toDataURL();
+          T.font = `${y} normal ${g} ${E}px/${C}px ${c}`, T.fillStyle = b, Array.isArray(v) ? v.map((V, X) => {
+            T.fillText(V, 0, (X - 1) * E);
+          }) : T.fillText(v, 0, 0), T.restore(), t.base64Url = k.toDataURL();
         }
       } else
         throw new Error("当前环境不支持Canvas");
@@ -16599,7 +16599,7 @@ function l4(e) {
     n.install ? e.use(n) : n.name && e.component(n.name, n);
   });
 }
-const s4 = "4.2.3", d4 = { install: l4, version: s4 };
+const s4 = "4.2.4", d4 = { install: l4, version: s4 };
 export {
   U1 as ActionSheet,
   hv as Address,
