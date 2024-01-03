@@ -4,9 +4,6 @@ declare type Install<T> = T & {
   install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
-    collapseRef: {
-        type: ObjectConstructor;
-    };
     title: {
         type: StringConstructor;
         default: string;
@@ -53,10 +50,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     handleClick: () => void;
     wrapperHeight: import("vue").Ref<string>;
     expanded: import("vue").ComputedRef<any>;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
-    collapseRef: {
-        type: ObjectConstructor;
-    };
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     title: {
         type: StringConstructor;
         default: string;

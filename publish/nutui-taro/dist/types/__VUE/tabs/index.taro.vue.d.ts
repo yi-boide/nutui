@@ -1,5 +1,5 @@
 import { VNode, Ref, CSSProperties, PropType } from 'vue';
-import type { TabsDirection, TabsSize, TabsType } from './types';
+import type { TabsDirection, TabsSize, TabsType, TabsAlign } from './types';
 export declare class Title {
     title: string;
     titleSlot?: VNode[];
@@ -68,6 +68,10 @@ declare const _default: Install< import("vue").DefineComponent<{
         type: NumberConstructor;
         default: number;
     };
+    align: {
+        type: PropType<TabsAlign>;
+        default: string;
+    };
 }, {
     onTouchStart(event: TouchEvent): void;
     onTouchMove(event: TouchEvent): void;
@@ -113,7 +117,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     scrollWithAnimation: Ref<boolean>;
     canShowLabel: Ref<boolean>;
     refRandomId: string;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("click" | "change" | "update:modelValue")[], "click" | "change" | "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("change" | "click" | "update:modelValue")[], "change" | "click" | "update:modelValue", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
         type: (NumberConstructor | StringConstructor)[];
         default: number;
@@ -170,16 +174,20 @@ declare const _default: Install< import("vue").DefineComponent<{
         type: NumberConstructor;
         default: number;
     };
+    align: {
+        type: PropType<TabsAlign>;
+        default: string;
+    };
 }>> & {
-    onClick?: ((...args: any[]) => any) | undefined;
     onChange?: ((...args: any[]) => any) | undefined;
+    onClick?: ((...args: any[]) => any) | undefined;
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
+    size: TabsSize;
     type: TabsType;
     color: string;
     top: number;
     ellipsis: boolean;
-    size: TabsSize;
     sticky: boolean;
     modelValue: string | number;
     background: string;
@@ -189,6 +197,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     autoHeight: boolean;
     animatedTime: string | number;
     titleGutter: string | number;
+    align: TabsAlign;
 }, {}>>;
 export default _default;
 

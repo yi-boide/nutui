@@ -51,6 +51,10 @@ declare const _default: Install< import("vue").DefineComponent<{
         type: BooleanConstructor;
         default: boolean;
     };
+    paginationUnselectedColor: {
+        type: StringConstructor;
+        default: string;
+    };
 }, {
     state: {
         active: number;
@@ -96,7 +100,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     onTouchStart: (e: TouchEvent) => void;
     onTouchMove: (e: TouchEvent) => void;
     onTouchEnd: () => void;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "change"[], "change", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "change"[], "change", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     width: {
         type: (NumberConstructor | StringConstructor)[];
     };
@@ -143,6 +147,10 @@ declare const _default: Install< import("vue").DefineComponent<{
         type: BooleanConstructor;
         default: boolean;
     };
+    paginationUnselectedColor: {
+        type: StringConstructor;
+        default: string;
+    };
 }>> & {
     onChange?: ((...args: any[]) => any) | undefined;
 }, {
@@ -156,6 +164,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     initPage: string | number;
     isPreventDefault: boolean;
     isStopPropagation: boolean;
+    paginationUnselectedColor: string;
 }, {}>>;
 export default _default;
 
