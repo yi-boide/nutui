@@ -1,7 +1,7 @@
 import { CSSProperties } from 'vue';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     modelValue: {
@@ -110,19 +110,19 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: () => {};
     };
 }>> & {
-    onCancel?: ((...args: any[]) => any) | undefined;
     onChange?: ((...args: any[]) => any) | undefined;
+    onCancel?: ((...args: any[]) => any) | undefined;
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     onConfirm?: ((...args: any[]) => any) | undefined;
 }, {
     title: string;
     modelValue: (string | number)[];
-    cancelText: string;
     threeDimensional: boolean;
     swipeDuration: string | number;
     visibleOptionNum: string | number;
     optionHeight: string | number;
     fieldNames: import("./types").PickerFieldNames;
+    cancelText: string;
     okText: string;
     columns: (import("./types").PickerOption | import("./types").PickerOption[])[];
     showToolbar: boolean;
@@ -130,7 +130,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutPicker: typeof _default;
-  }
+    interface GlobalComponents {
+        NutPicker: typeof _default;
+    }
 }

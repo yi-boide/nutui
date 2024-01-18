@@ -1,6 +1,6 @@
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     leftShow: {
@@ -110,20 +110,20 @@ declare const _default: Install< import("vue").DefineComponent<{
     onOnClickRight?: ((...args: any[]) => any) | undefined;
 }, {
     title: string;
-    fixed: boolean;
     desc: string;
+    fixed: boolean;
     zIndex: string | number;
     border: boolean;
-    placeholder: boolean;
     leftShow: boolean;
     titleIcon: boolean;
     leftText: string;
     safeAreaInsetTop: boolean;
+    placeholder: boolean;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutNavbar: typeof _default;
-  }
+    interface GlobalComponents {
+        NutNavbar: typeof _default;
+    }
 }

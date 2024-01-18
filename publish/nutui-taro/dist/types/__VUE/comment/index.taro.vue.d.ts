@@ -11,7 +11,7 @@ interface ImagesType {
 }
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     headerType: {
@@ -23,7 +23,7 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: string;
     };
     ellipsis: {
-        type: (BooleanConstructor | NumberConstructor | StringConstructor)[];
+        type: (NumberConstructor | StringConstructor | BooleanConstructor)[];
         default: boolean;
     };
     videos: {
@@ -66,7 +66,7 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: string;
     };
     ellipsis: {
-        type: (BooleanConstructor | NumberConstructor | StringConstructor)[];
+        type: (NumberConstructor | StringConstructor | BooleanConstructor)[];
         default: boolean;
     };
     videos: {
@@ -98,10 +98,10 @@ declare const _default: Install< import("vue").DefineComponent<{
     onClickImages?: ((...args: any[]) => any) | undefined;
     onClickOperate?: ((...args: any[]) => any) | undefined;
 }, {
-    ellipsis: string | number | boolean;
     info: Record<string, any>;
-    videos: VideosType[];
+    ellipsis: string | number | boolean;
     images: ImagesType[];
+    videos: VideosType[];
     operation: string[];
     headerType: string;
     imagesRows: string;
@@ -111,7 +111,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutComment: typeof _default;
-  }
+    interface GlobalComponents {
+        NutComment: typeof _default;
+    }
 }

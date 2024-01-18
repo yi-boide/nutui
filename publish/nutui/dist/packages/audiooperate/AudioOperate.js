@@ -19,10 +19,11 @@ var __spreadValues = (a, b) => {
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 import { inject, reactive, ref, useSlots, toRefs, resolveComponent, openBlock, createElementBlock, createBlock, withCtx, createTextVNode, toDisplayString, createCommentVNode, renderSlot } from "vue";
 import { c as createComponent } from "../component-TCzwHGVq.js";
-import NutButton from "../button/Button.js";
+import { Button as _sfc_main$1 } from "../button/Button.js";
 import { u as useLocale } from "../index-s3RgMhc7.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
 import "@nutui/icons-vue";
+import "../with-install-p59gYYU_.js";
 import "@nutui/nutui/dist/packages/locale/lang";
 import "../util-4Jkyw4BJ.js";
 const { create } = createComponent("audio-operate");
@@ -36,7 +37,7 @@ const _sfc_main = create({
     }
   },
   components: {
-    NutButton
+    NutButton: _sfc_main$1
   },
   emits: ["click"],
   setup(props) {

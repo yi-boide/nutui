@@ -3,7 +3,7 @@ export interface InputTarget extends HTMLInputElement {
 }
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     modelValue: {
@@ -39,7 +39,7 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: boolean;
     };
     autosize: {
-        type: (BooleanConstructor | ObjectConstructor)[];
+        type: (ObjectConstructor | BooleanConstructor)[];
         default: boolean;
     };
     autofocus: {
@@ -95,7 +95,7 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: boolean;
     };
     autosize: {
-        type: (BooleanConstructor | ObjectConstructor)[];
+        type: (ObjectConstructor | BooleanConstructor)[];
         default: boolean;
     };
     autofocus: {
@@ -103,26 +103,26 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: boolean;
     };
 }>> & {
+    onFocus?: ((...args: any[]) => any) | undefined;
     onBlur?: ((...args: any[]) => any) | undefined;
     onChange?: ((...args: any[]) => any) | undefined;
-    onFocus?: ((...args: any[]) => any) | undefined;
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
     disabled: boolean;
-    modelValue: string;
-    rows: string | number;
-    readonly: boolean;
-    textAlign: string;
     placeholder: string;
+    modelValue: string;
     maxLength: string | number;
     autofocus: boolean;
+    readonly: boolean;
+    textAlign: string;
     limitShow: boolean;
+    rows: string | number;
     autosize: boolean | Record<string, any>;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutTextarea: typeof _default;
-  }
+    interface GlobalComponents {
+        NutTextarea: typeof _default;
+    }
 }

@@ -2,7 +2,7 @@ import { PropType } from 'vue';
 import type { ProgressSize, ProgressStatus } from './types';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     percentage: {
@@ -101,20 +101,20 @@ declare const _default: Install< import("vue").DefineComponent<{
     };
 }>>, {
     size: ProgressSize;
-    textColor: string;
-    strokeWidth: string | number;
     percentage: string | number;
     status: ProgressStatus;
+    strokeWidth: string | number;
     textInside: boolean;
     showText: boolean;
     strokeColor: string;
+    textColor: string;
     textBackground: string;
     isShowPercentage: boolean;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutProgress: typeof _default;
-  }
+    interface GlobalComponents {
+        NutProgress: typeof _default;
+    }
 }

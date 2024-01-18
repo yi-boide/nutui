@@ -10,7 +10,7 @@ export interface StepOptions {
 export type TourType = 'step' | 'tile';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     modelValue: {
@@ -166,16 +166,16 @@ declare const _default: Install< import("vue").DefineComponent<{
     onClose?: ((...args: any[]) => any) | undefined;
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
+    type: TourType;
     mask: boolean;
     closeOnClickOverlay: boolean;
-    type: TourType;
-    modelValue: boolean;
-    offset: Number[];
-    bgColor: string;
     theme: PopoverTheme;
+    offset: Number[];
     current: number;
-    location: PopoverLocation;
+    modelValue: boolean;
+    bgColor: string;
     steps: StepOptions[];
+    location: PopoverLocation;
     nextStepTxt: string;
     prevStepTxt: string;
     completeTxt: string;
@@ -187,7 +187,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutTour: typeof _default;
-  }
+    interface GlobalComponents {
+        NutTour: typeof _default;
+    }
 }

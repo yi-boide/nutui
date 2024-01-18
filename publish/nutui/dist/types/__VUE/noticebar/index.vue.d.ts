@@ -1,7 +1,7 @@
 import { PropType } from 'vue';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     direction: {
@@ -164,12 +164,11 @@ declare const _default: Install< import("vue").DefineComponent<{
     onClose?: ((...args: any[]) => any) | undefined;
     onAcrossEnd?: ((...args: any[]) => any) | undefined;
 }, {
-    text: string;
     color: string;
     height: number;
+    text: string;
     background: string;
     direction: string;
-    speed: number;
     list: any[];
     standTime: number;
     complexAm: boolean;
@@ -178,11 +177,12 @@ declare const _default: Install< import("vue").DefineComponent<{
     leftIcon: boolean;
     delay: string | number;
     scrollable: boolean;
+    speed: number;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutNoticebar: typeof _default;
-  }
+    interface GlobalComponents {
+        NutNoticebar: typeof _default;
+    }
 }

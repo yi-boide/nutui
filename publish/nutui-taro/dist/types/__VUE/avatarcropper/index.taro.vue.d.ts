@@ -1,9 +1,9 @@
 import { PropType } from 'vue';
-import type { AvatarCropperToolbarPosition, AvatarCropperSizeType, AvatarCropperSourceType } from './types';
+import type { AvatarCropperToolbarPosition, AvatarCropperSizeType, AvatarCropperSourceType, AvatarCropperShape } from './types';
 import Taro from '@tarojs/taro';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     maxZoom: {
@@ -28,6 +28,10 @@ declare const _default: Install< import("vue").DefineComponent<{
     };
     confirmText: {
         type: StringConstructor;
+        default: string;
+    };
+    shape: {
+        type: PropType<AvatarCropperShape>;
         default: string;
     };
     sizeType: {
@@ -164,6 +168,10 @@ declare const _default: Install< import("vue").DefineComponent<{
         type: StringConstructor;
         default: string;
     };
+    shape: {
+        type: PropType<AvatarCropperShape>;
+        default: string;
+    };
     sizeType: {
         type: PropType<AvatarCropperSizeType[]>;
         default: () => string[];
@@ -176,19 +184,20 @@ declare const _default: Install< import("vue").DefineComponent<{
     onCancel?: ((...args: any[]) => any) | undefined;
     onConfirm?: ((...args: any[]) => any) | undefined;
 }, {
+    shape: AvatarCropperShape;
     space: number;
+    confirmText: string;
+    cancelText: string;
+    sizeType: AvatarCropperSizeType[];
+    sourceType: AvatarCropperSourceType[];
     maxZoom: number;
     toolbarPosition: AvatarCropperToolbarPosition;
     editText: string;
-    cancelText: string;
-    confirmText: string;
-    sizeType: AvatarCropperSizeType[];
-    sourceType: AvatarCropperSourceType[];
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutAvatarCropper: typeof _default;
-  }
+    interface GlobalComponents {
+        NutAvatarCropper: typeof _default;
+    }
 }

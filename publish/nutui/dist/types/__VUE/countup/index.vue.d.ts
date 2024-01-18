@@ -1,6 +1,6 @@
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     initNum: {
@@ -76,11 +76,11 @@ declare const _default: Install< import("vue").DefineComponent<{
     setRef: (el: any) => void;
     topNumber: (index: number) => string | number;
     turnNumber: (index: number) => string | number;
-    toFixed: import("vue").Ref<number>;
     type: import("vue").Ref<string>;
+    toFixed: import("vue").Ref<number>;
+    speed: import("vue").Ref<number>;
     initNum: import("vue").Ref<number>;
     endNum: import("vue").Ref<number>;
-    speed: import("vue").Ref<number>;
     during: import("vue").Ref<number>;
     startFlag: import("vue").Ref<boolean>;
     numWidth: import("vue").Ref<number>;
@@ -188,11 +188,11 @@ declare const _default: Install< import("vue").DefineComponent<{
     onClick?: ((...args: any[]) => any) | undefined;
     onScrollEnd?: ((...args: any[]) => any) | undefined;
 }, {
-    toFixed: number;
     type: string;
+    toFixed: number;
+    speed: number;
     initNum: number;
     endNum: number;
-    speed: number;
     during: number;
     startFlag: boolean;
     numWidth: number;
@@ -209,7 +209,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutCountup: typeof _default;
-  }
+    interface GlobalComponents {
+        NutCountup: typeof _default;
+    }
 }

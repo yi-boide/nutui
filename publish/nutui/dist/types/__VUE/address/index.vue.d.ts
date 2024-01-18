@@ -2,7 +2,7 @@ import { Ref, PropType } from 'vue';
 import { AddressData, CustomRegionData, existRegionData } from './type';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     modelValue: {
@@ -168,7 +168,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     handClose: (type?: string) => void;
     handleElevatorItem: (key: string, item: AddressData) => void;
     initCustomSelected: () => void;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("change" | "close" | "update:visible" | "type" | "update:modelValue" | "selected" | "closeMask" | "switchModule")[], "change" | "close" | "update:visible" | "type" | "update:modelValue" | "selected" | "closeMask" | "switchModule", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("type" | "change" | "close" | "update:visible" | "selected" | "update:modelValue" | "closeMask" | "switchModule")[], "type" | "change" | "close" | "update:visible" | "selected" | "update:modelValue" | "closeMask" | "switchModule", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
         type: ArrayConstructor;
         default: () => never[];
@@ -308,13 +308,17 @@ declare const _default: Install< import("vue").DefineComponent<{
     onChange?: ((...args: any[]) => any) | undefined;
     onClose?: ((...args: any[]) => any) | undefined;
     "onUpdate:visible"?: ((...args: any[]) => any) | undefined;
-    onType?: ((...args: any[]) => any) | undefined;
-    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     onSelected?: ((...args: any[]) => any) | undefined;
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    onType?: ((...args: any[]) => any) | undefined;
     onCloseMask?: ((...args: any[]) => any) | undefined;
     onSwitchModule?: ((...args: any[]) => any) | undefined;
 }, {
+    round: boolean;
+    type: string;
+    height: string | number;
     style: Record<string, any>;
+    transition: string;
     overlay: boolean;
     visible: boolean;
     zIndex: string | number;
@@ -323,11 +327,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     overlayClass: string;
     overlayStyle: Record<string, any>;
     closeOnClickOverlay: boolean;
-    type: string;
-    round: boolean;
     position: string;
-    height: string | number;
-    transition: string;
     popClass: string;
     closeable: boolean;
     closeIconPosition: string;
@@ -351,7 +351,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutAddress: typeof _default;
-  }
+    interface GlobalComponents {
+        NutAddress: typeof _default;
+    }
 }

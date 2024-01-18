@@ -1,12 +1,35 @@
-import { toRefs, computed, resolveComponent, openBlock, createElementBlock, normalizeClass, normalizeStyle, createElementVNode, createBlock, createCommentVNode, renderSlot } from "vue";
-import { c as createComponent } from "../component-TCzwHGVq.js";
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+import { defineComponent, toRefs, computed, openBlock, createElementBlock, normalizeClass, normalizeStyle, createElementVNode, unref, createBlock, createCommentVNode, renderSlot } from "vue";
 import { Loading } from "@nutui/icons-vue";
-import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
-const { componentName, create } = createComponent("button");
-const _sfc_main = create({
-  components: { Loading },
+import { w as withInstall } from "../with-install-p59gYYU_.js";
+const _hoisted_1 = { class: "nut-button__wrap" };
+const _sfc_main = /* @__PURE__ */ defineComponent(__spreadProps(__spreadValues({}, {
+  name: "NutButton"
+}), {
+  __name: "button",
   props: {
-    color: String,
+    color: {
+      type: String,
+      default: ""
+    },
     shape: {
       type: String,
       default: "round"
@@ -37,7 +60,9 @@ const _sfc_main = create({
     }
   },
   emits: ["click"],
-  setup(props, { emit }) {
+  setup(__props, { emit: __emit }) {
+    const props = __props;
+    const emit = __emit;
     const { type, size, shape, disabled, loading, color, plain, block } = toRefs(props);
     const handleClick = (event) => {
       if (!loading.value && !disabled.value) {
@@ -45,7 +70,7 @@ const _sfc_main = create({
       }
     };
     const classes = computed(() => {
-      const prefixCls = componentName;
+      const prefixCls = "nut-button";
       return {
         [prefixCls]: true,
         [`${prefixCls}--${type.value}`]: type.value,
@@ -58,53 +83,45 @@ const _sfc_main = create({
       };
     });
     const getStyle = computed(() => {
-      var _a;
-      const style = {};
+      let style = {};
       if (color == null ? void 0 : color.value) {
-        if (plain.value) {
-          style.color = color.value;
-          style.background = "#fff";
-          if (!((_a = color.value) == null ? void 0 : _a.includes("gradient"))) {
-            style.borderColor = color.value;
-          }
+        style = {
+          color: plain.value ? color.value : "#fff",
+          background: plain.value ? "#fff" : `border-box ${color.value}`
+        };
+        if (color.value.includes("gradient")) {
+          style.borderColor = "transparent";
         } else {
-          style.color = "#fff";
-          style.background = color.value;
+          style.borderColor = color.value;
         }
       }
       return style;
     });
-    return {
-      handleClick,
-      classes,
-      getStyle
+    return (_ctx, _cache) => {
+      return openBlock(), createElementBlock("view", {
+        class: normalizeClass(classes.value),
+        style: normalizeStyle(getStyle.value),
+        onClick: handleClick
+      }, [
+        createElementVNode("view", _hoisted_1, [
+          unref(loading) ? (openBlock(), createBlock(unref(Loading), {
+            key: 0,
+            class: "nut-icon-loading"
+          })) : createCommentVNode("", true),
+          _ctx.$slots.icon && !unref(loading) ? renderSlot(_ctx.$slots, "icon", { key: 1 }) : createCommentVNode("", true),
+          _ctx.$slots.default ? (openBlock(), createElementBlock("view", {
+            key: 2,
+            class: normalizeClass({ "nut-button__text": _ctx.$slots.icon || unref(loading) })
+          }, [
+            renderSlot(_ctx.$slots, "default")
+          ], 2)) : createCommentVNode("", true)
+        ])
+      ], 6);
     };
   }
-});
-const _hoisted_1 = { class: "nut-button__wrap" };
-function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  const _component_Loading = resolveComponent("Loading");
-  return openBlock(), createElementBlock("view", {
-    class: normalizeClass(_ctx.classes),
-    style: normalizeStyle(_ctx.getStyle),
-    onClick: _cache[0] || (_cache[0] = (...args) => _ctx.handleClick && _ctx.handleClick(...args))
-  }, [
-    createElementVNode("view", _hoisted_1, [
-      _ctx.loading ? (openBlock(), createBlock(_component_Loading, {
-        key: 0,
-        class: "nut-icon-loading"
-      })) : createCommentVNode("", true),
-      _ctx.$slots.icon && !_ctx.loading ? renderSlot(_ctx.$slots, "icon", { key: 1 }) : createCommentVNode("", true),
-      _ctx.$slots.default ? (openBlock(), createElementBlock("view", {
-        key: 2,
-        class: normalizeClass({ "nut-button__text": _ctx.$slots.icon || _ctx.loading })
-      }, [
-        renderSlot(_ctx.$slots, "default")
-      ], 2)) : createCommentVNode("", true)
-    ])
-  ], 6);
-}
-const NutButton = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+}));
+withInstall(_sfc_main);
 export {
-  NutButton as default
+  _sfc_main as Button,
+  _sfc_main as default
 };

@@ -2,7 +2,7 @@ import { PropType } from 'vue';
 import { RadioShape, RadioButtonSize } from './types';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     disabled: {
@@ -14,7 +14,7 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: string;
     };
     label: {
-        type: (BooleanConstructor | NumberConstructor | StringConstructor)[];
+        type: (NumberConstructor | StringConstructor | BooleanConstructor)[];
         default: string;
     };
     iconSize: {
@@ -37,7 +37,7 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: string;
     };
     label: {
-        type: (BooleanConstructor | NumberConstructor | StringConstructor)[];
+        type: (NumberConstructor | StringConstructor | BooleanConstructor)[];
         default: string;
     };
     iconSize: {
@@ -49,16 +49,16 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: string;
     };
 }>>, {
+    shape: RadioShape;
+    disabled: boolean;
     size: RadioButtonSize;
     label: string | number | boolean;
-    disabled: boolean;
-    shape: RadioShape;
     iconSize: string | number;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutRadio: typeof _default;
-  }
+    interface GlobalComponents {
+        NutRadio: typeof _default;
+    }
 }

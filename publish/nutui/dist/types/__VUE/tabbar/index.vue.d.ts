@@ -1,6 +1,6 @@
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     modelValue: {
@@ -71,15 +71,15 @@ declare const _default: Install< import("vue").DefineComponent<{
     type: string;
     bottom: boolean;
     safeAreaInsetBottom: boolean;
-    modelValue: string | number;
-    activeColor: string;
     placeholder: boolean;
+    activeColor: string;
+    modelValue: string | number;
     unactiveColor: string;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutTabbar: typeof _default;
-  }
+    interface GlobalComponents {
+        NutTabbar: typeof _default;
+    }
 }

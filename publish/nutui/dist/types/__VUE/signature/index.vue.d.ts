@@ -1,6 +1,6 @@
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     customClass: {
@@ -61,10 +61,10 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: string;
     };
 }>> & {
-    onConfirm?: ((...args: any[]) => any) | undefined;
-    onEnd?: ((...args: any[]) => any) | undefined;
     onClear?: ((...args: any[]) => any) | undefined;
+    onConfirm?: ((...args: any[]) => any) | undefined;
     onStart?: ((...args: any[]) => any) | undefined;
+    onEnd?: ((...args: any[]) => any) | undefined;
     onSigning?: ((...args: any[]) => any) | undefined;
 }, {
     type: string;
@@ -76,7 +76,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutSignature: typeof _default;
-  }
+    interface GlobalComponents {
+        NutSignature: typeof _default;
+    }
 }

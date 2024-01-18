@@ -1,6 +1,6 @@
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     visible: {
@@ -198,7 +198,9 @@ declare const _default: Install< import("vue").DefineComponent<{
     onClosed?: ((...args: any[]) => any) | undefined;
     onClickOverlay?: ((...args: any[]) => any) | undefined;
 }, {
+    round: boolean;
     style: Record<string, any>;
+    transition: string;
     overlay: boolean;
     visible: boolean;
     zIndex: string | number;
@@ -207,9 +209,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     overlayClass: string;
     overlayStyle: Record<string, any>;
     closeOnClickOverlay: boolean;
-    round: boolean;
     position: string;
-    transition: string;
     popClass: string;
     closeable: boolean;
     closeIconPosition: string;
@@ -222,7 +222,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutPopup: typeof _default;
-  }
+    interface GlobalComponents {
+        NutPopup: typeof _default;
+    }
 }

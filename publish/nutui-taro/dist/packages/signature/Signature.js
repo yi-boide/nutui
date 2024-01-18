@@ -21,10 +21,11 @@ var __async = (__this, __arguments, generator) => {
 import Taro from "@tarojs/taro";
 import { computed, ref, reactive, onMounted, resolveComponent, openBlock, createElementBlock, normalizeClass, createElementVNode, createTextVNode, createVNode, withCtx, toDisplayString } from "vue";
 import { c as createComponent } from "../component-TCzwHGVq.js";
-import NutButton from "../button/Button.js";
+import { Button as _sfc_main$1 } from "../button/Button.js";
 import { u as useLocale } from "../index-DDx91B18.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
 import "@nutui/icons-vue-taro";
+import "../with-install-p59gYYU_.js";
 import "@nutui/nutui-taro/dist/packages/locale/lang";
 import "../util-WZB3Ltgx.js";
 const { create } = createComponent("signature");
@@ -53,7 +54,7 @@ const _sfc_main = create({
     }
   },
   components: {
-    NutButton
+    NutButton: _sfc_main$1
   },
   emits: ["start", "end", "signing", "confirm", "clear"],
   setup(props, { emit }) {

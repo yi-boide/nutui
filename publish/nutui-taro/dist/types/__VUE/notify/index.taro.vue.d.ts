@@ -1,6 +1,6 @@
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     id: StringConstructor;
@@ -82,19 +82,19 @@ declare const _default: Install< import("vue").DefineComponent<{
 }>> & {
     "onUpdate:visible"?: ((...args: any[]) => any) | undefined;
 }, {
+    color: string;
+    type: string;
+    background: string;
     visible: boolean;
     duration: number;
-    type: string;
-    color: string;
     position: string;
-    background: string;
     className: string;
     msg: string;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutNotify: typeof _default;
-  }
+    interface GlobalComponents {
+        NutNotify: typeof _default;
+    }
 }

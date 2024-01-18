@@ -1,7 +1,7 @@
 import { Ref } from 'vue';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     count: {
@@ -107,9 +107,9 @@ declare const _default: Install< import("vue").DefineComponent<{
     pxCheck: (value?: string | number | undefined) => string | undefined;
     rateRefs: Ref<HTMLElement[]>;
     refRandomId: string;
-    renderIcon: (icon: import("vue").Component, props?: any) => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+    renderIcon: (icon: import("vue").Component, props?: any) => "" | import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
         [key: string]: any;
-    }> | "";
+    }>;
     slots: Readonly<{
         [name: string]: import("vue").Slot<any> | undefined;
     }>;
@@ -218,14 +218,14 @@ declare const _default: Install< import("vue").DefineComponent<{
     onChange?: ((...args: any[]) => any) | undefined;
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    size: string | number;
     disabled: boolean;
-    modelValue: string | number;
+    size: string | number;
     activeColor: string;
+    modelValue: string | number;
     count: string | number;
+    readonly: boolean;
     customIcon: Record<string, any>;
     voidColor: string;
-    readonly: boolean;
     allowHalf: boolean;
     touchable: boolean;
     spacing: string | number;
@@ -233,7 +233,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutRate: typeof _default;
-  }
+    interface GlobalComponents {
+        NutRate: typeof _default;
+    }
 }

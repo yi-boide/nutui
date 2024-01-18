@@ -22,12 +22,13 @@ import { ref, watch, reactive, resolveComponent, openBlock, createElementBlock, 
 import { c as createComponent } from "../component-TCzwHGVq.js";
 import { f as funInterceptor } from "../Interceptor-CfVX2DIs.js";
 import NutProgress from "../progress/Progress.js";
-import NutButton from "../button/Button.js";
+import { Button as _sfc_main$1 } from "../button/Button.js";
 import Taro from "@tarojs/taro";
 import { Photograph, Failure, Loading, Del, Link } from "@nutui/icons-vue-taro";
 import { u as useLocale } from "../index-DDx91B18.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
 import "../util-WZB3Ltgx.js";
+import "../with-install-p59gYYU_.js";
 import "@nutui/nutui-taro/dist/packages/locale/lang";
 class UploadOptions {
   constructor() {
@@ -157,7 +158,7 @@ const cN = "NutUploader";
 const _sfc_main = create({
   components: {
     NutProgress,
-    NutButton,
+    NutButton: _sfc_main$1,
     Photograph,
     Failure,
     Loading,

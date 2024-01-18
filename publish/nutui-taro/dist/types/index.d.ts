@@ -1,6 +1,7 @@
 import { App } from 'vue';
 import Locale from './locale';
-import Button from './__VUE/button/index.taro.vue';
+import Button from './__VUE/button/index.taro';
+export * from './__VUE/button/index.taro';
 import Cell from './__VUE/cell/index.taro.vue';
 import CellGroup from './__VUE/cellgroup/index.taro.vue';
 import Overlay from './__VUE/overlay/index.taro.vue';
@@ -10,7 +11,8 @@ import Layout from './__VUE/layout/index.taro.vue';
 import Col from './__VUE/col/index.taro.vue';
 import Row from './__VUE/row/index.taro.vue';
 import Sticky from './__VUE/sticky/index.taro.vue';
-import Divider from './__VUE/divider/index.taro.vue';
+import Divider from './__VUE/divider/index.taro';
+export * from './__VUE/divider/index.taro';
 import Grid from './__VUE/grid/index.taro.vue';
 import GridItem from './__VUE/griditem/index.taro.vue';
 import Space from './__VUE/space/index.taro.vue';
@@ -99,7 +101,7 @@ import Comment from './__VUE/comment/index.taro.vue';
 import Invoice from './__VUE/invoice/index.taro.vue';
 import AvatarCropper from './__VUE/avatarcropper/index.taro.vue';
 declare function install(app: App): void;
-declare const version = "4.2.6";
+declare const version = "4.2.8";
 export { install, version, Locale, Button, Cell, CellGroup, Overlay, Popup, ConfigProvider, Layout, Col, Row, Sticky, Divider, Grid, GridItem, Space, Navbar, FixedNav, Menu, MenuItem, Tabbar, TabbarItem, Elevator, Pagination, Tabs, TabPane, Indicator, SideNavbar, SideNavbarItem, SubSideNavbar, Range, Searchbar, Cascader, Calendar, Checkbox, CheckboxGroup, DatePicker, InputNumber, Input, Radio, RadioGroup, Rate, Picker, ShortPassword, Textarea, Uploader, NumberKeyboard, Form, FormItem, Swipe, SwipeGroup, ActionSheet, Backtop, Drag, Dialog, Notify, Switch, Toast, Avatar, AvatarGroup, List, Progress, CircleProgress, Noticebar, Empty, Steps, Step, Swiper, SwiperItem, Price, ImagePreview, Countup, Countdown, Badge, Tag, Popover, Skeleton, Collapse, CollapseItem, Table, Animate, Ellipsis, Watermark, TrendArrow, Tour, Address, Barrage, Signature, TimeSelect, TimePannel, TimeDetail, Sku, Card, Ecard, AddressList, Category, CategoryPane, Comment, Invoice, AvatarCropper };
 declare const _default: {
     install: typeof install;

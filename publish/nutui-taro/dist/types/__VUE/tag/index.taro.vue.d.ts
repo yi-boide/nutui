@@ -2,7 +2,7 @@ import { PropType, CSSProperties } from 'vue';
 import { TagType } from './types';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     color: {
@@ -77,18 +77,18 @@ declare const _default: Install< import("vue").DefineComponent<{
     onClick?: ((...args: any[]) => any) | undefined;
     onClose?: ((...args: any[]) => any) | undefined;
 }, {
-    mark: boolean;
-    type: TagType;
-    color: string;
     round: boolean;
-    closeable: boolean;
+    color: string;
     plain: boolean;
+    type: TagType;
+    mark: boolean;
+    closeable: boolean;
     textColor: string;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutTag: typeof _default;
-  }
+    interface GlobalComponents {
+        NutTag: typeof _default;
+    }
 }

@@ -3,7 +3,7 @@ import { Interceptor } from '@/packages/utils/util';
 import { ImageInterface } from './types';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     images: {
@@ -163,21 +163,21 @@ declare const _default: Install< import("vue").DefineComponent<{
     teleport: string | Element;
     teleportDisable: boolean;
     autoplay: string | number;
-    maxZoom: number;
-    videos: unknown[];
-    images: ImageInterface[];
+    paginationVisible: boolean;
+    paginationColor: string;
     contentClose: boolean;
     initNo: number;
     showIndex: boolean;
     minZoom: number;
-    paginationVisible: boolean;
-    paginationColor: string;
+    maxZoom: number;
+    images: ImageInterface[];
+    videos: unknown[];
     isLoop: boolean;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutImagePreview: typeof _default;
-  }
+    interface GlobalComponents {
+        NutImagePreview: typeof _default;
+    }
 }

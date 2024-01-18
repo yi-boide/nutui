@@ -1,6 +1,6 @@
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     title: {
@@ -95,9 +95,9 @@ declare const _default: Install< import("vue").DefineComponent<{
         [x: string]: boolean;
         "nut-collapse-item": boolean;
     }>;
-    renderIcon: (icon: import("vue").Component, props?: any) => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+    renderIcon: (icon: import("vue").Component, props?: any) => "" | import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
         [key: string]: any;
-    }> | "";
+    }>;
     wrapperRef: any;
     contentRef: any;
     open: () => void;
@@ -195,18 +195,18 @@ declare const _default: Install< import("vue").DefineComponent<{
     };
 }>>, {
     name: string | number;
+    disabled: boolean;
     label: string;
     title: string;
     icon: Record<string, any>;
     border: boolean;
-    disabled: boolean;
     value: string;
     rotate: string | number;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutCollapseItem: typeof _default;
-  }
+    interface GlobalComponents {
+        NutCollapseItem: typeof _default;
+    }
 }

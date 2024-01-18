@@ -2,7 +2,7 @@ import { PropType, ComputedRef } from 'vue';
 import type { InputType, InputAlignType, InputFormatTrigger, ConfirmTextType } from './type';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     type: {
@@ -104,7 +104,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     select: () => void;
     onKeyup: (e: KeyboardEvent) => void;
     getModelValue: () => string;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("clear" | "blur" | "click" | "focus" | "keypress" | "update:modelValue" | "confirm" | "clickInput")[], "clear" | "blur" | "click" | "focus" | "keypress" | "update:modelValue" | "confirm" | "clickInput", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("click" | "clear" | "blur" | "focus" | "keypress" | "update:modelValue" | "clickInput" | "confirm")[], "click" | "clear" | "blur" | "focus" | "keypress" | "update:modelValue" | "clickInput" | "confirm", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     type: {
         type: PropType<InputType>;
         default: string;
@@ -182,39 +182,39 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: string;
     };
 }>> & {
-    onBlur?: ((...args: any[]) => any) | undefined;
     onClick?: ((...args: any[]) => any) | undefined;
     onFocus?: ((...args: any[]) => any) | undefined;
+    onBlur?: ((...args: any[]) => any) | undefined;
     onKeypress?: ((...args: any[]) => any) | undefined;
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
-    onConfirm?: ((...args: any[]) => any) | undefined;
     onClear?: ((...args: any[]) => any) | undefined;
     onClickInput?: ((...args: any[]) => any) | undefined;
+    onConfirm?: ((...args: any[]) => any) | undefined;
 }, {
-    error: boolean;
+    disabled: boolean;
     type: InputType;
     class: string;
+    error: boolean;
     border: boolean;
-    disabled: boolean;
-    modelValue: string | number;
-    required: boolean;
-    readonly: boolean;
-    formatter: (value: string) => string;
     placeholder: string;
-    inputAlign: InputAlignType;
+    modelValue: string | number;
     maxLength: string | number;
     clearable: boolean;
+    autofocus: boolean;
+    readonly: boolean;
+    inputAlign: InputAlignType;
+    formatter: (value: string) => string;
+    required: boolean;
     clearSize: string | number;
     formatTrigger: InputFormatTrigger;
     showWordLimit: boolean;
-    autofocus: boolean;
     confirmType: ConfirmTextType;
     showClearIcon: boolean;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutInput: typeof _default;
-  }
+    interface GlobalComponents {
+        NutInput: typeof _default;
+    }
 }

@@ -1,6 +1,6 @@
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     theme: {
@@ -31,14 +31,14 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: string;
     };
 }>>, {
-    tag: string;
     theme: string;
     themeVars: Record<string, any>;
+    tag: string;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutConfigProvider: typeof _default;
-  }
+    interface GlobalComponents {
+        NutConfigProvider: typeof _default;
+    }
 }

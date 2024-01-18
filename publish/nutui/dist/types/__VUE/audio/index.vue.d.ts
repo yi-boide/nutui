@@ -2,7 +2,7 @@ import { type PropType } from 'vue';
 import type { AudioType } from './types';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     url: {
@@ -55,10 +55,10 @@ declare const _default: Install< import("vue").DefineComponent<{
     playing: import("vue").Ref<boolean>;
     handPlaying: import("vue").Ref<boolean>;
     type: import("vue").Ref<AudioType>;
-    loop: import("vue").Ref<boolean>;
     url: import("vue").Ref<string>;
     muted: import("vue").Ref<boolean>;
     autoplay: import("vue").Ref<boolean>;
+    loop: import("vue").Ref<boolean>;
     preload: import("vue").Ref<string>;
     onEnded: import("vue").Ref<((...args: any[]) => any) | undefined>;
     onPlay: import("vue").Ref<((...args: any[]) => any) | undefined>;
@@ -106,17 +106,17 @@ declare const _default: Install< import("vue").DefineComponent<{
     onCanPlay?: ((...args: any[]) => any) | undefined;
 }, {
     type: AudioType;
-    loop: boolean;
     url: string;
     muted: boolean;
     autoplay: boolean;
+    loop: boolean;
     preload: string;
     second: number;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutAudio: typeof _default;
-  }
+    interface GlobalComponents {
+        NutAudio: typeof _default;
+    }
 }

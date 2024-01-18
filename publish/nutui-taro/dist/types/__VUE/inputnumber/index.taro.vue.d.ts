@@ -1,6 +1,6 @@
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     modelValue: {
@@ -89,28 +89,28 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: boolean;
     };
 }>> & {
+    onFocus?: ((...args: any[]) => any) | undefined;
     onBlur?: ((...args: any[]) => any) | undefined;
     onChange?: ((...args: any[]) => any) | undefined;
-    onFocus?: ((...args: any[]) => any) | undefined;
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
-    onAdd?: ((...args: any[]) => any) | undefined;
     onReduce?: ((...args: any[]) => any) | undefined;
+    onAdd?: ((...args: any[]) => any) | undefined;
     onOverlimit?: ((...args: any[]) => any) | undefined;
 }, {
     disabled: boolean;
     modelValue: string | number;
     max: string | number;
-    readonly: boolean;
     min: string | number;
+    step: string | number;
+    readonly: boolean;
     inputWidth: string | number;
     buttonSize: string | number;
-    step: string | number;
     decimalPlaces: string | number;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutInputNumber: typeof _default;
-  }
+    interface GlobalComponents {
+        NutInputNumber: typeof _default;
+    }
 }

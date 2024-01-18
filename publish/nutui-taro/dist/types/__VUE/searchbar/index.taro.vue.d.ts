@@ -3,7 +3,7 @@ import { CircleClose } from '@nutui/icons-vue-taro';
 import { SearchbarConfirmType, SearchbarInputAlign, SearchbarShape } from './types';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     modelValue: {
@@ -93,9 +93,9 @@ declare const _default: Install< import("vue").DefineComponent<{
     rightIconClick: (event: Event) => void;
     styleSearchbar: import("vue").ComputedRef<CSSProperties>;
     active: Ref<boolean>;
-    renderIcon: (icon: import("vue").Component, props?: any) => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+    renderIcon: (icon: import("vue").Component, props?: any) => "" | import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
         [key: string]: any;
-    }> | "";
+    }>;
     inputsearch: Ref<HTMLElement | null>;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("clear" | "search" | "blur" | "change" | "focus" | "update:modelValue" | "clickInput" | "clickLeftIcon" | "clickRightIcon")[], "clear" | "search" | "blur" | "change" | "focus" | "update:modelValue" | "clickInput" | "clickLeftIcon" | "clickRightIcon", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
@@ -167,38 +167,38 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: number;
     };
 }>> & {
+    onFocus?: ((...args: any[]) => any) | undefined;
     onBlur?: ((...args: any[]) => any) | undefined;
     onChange?: ((...args: any[]) => any) | undefined;
-    onFocus?: ((...args: any[]) => any) | undefined;
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     onClear?: ((...args: any[]) => any) | undefined;
-    onClickInput?: ((...args: any[]) => any) | undefined;
     onSearch?: ((...args: any[]) => any) | undefined;
+    onClickInput?: ((...args: any[]) => any) | undefined;
     onClickLeftIcon?: ((...args: any[]) => any) | undefined;
     onClickRightIcon?: ((...args: any[]) => any) | undefined;
 }, {
-    disabled: boolean;
-    safeAreaInsetBottom: boolean;
-    modelValue: string | number;
     shape: SearchbarShape;
+    disabled: boolean;
     background: string;
-    readonly: boolean;
+    safeAreaInsetBottom: boolean;
     placeholder: string;
-    inputAlign: SearchbarInputAlign;
+    modelValue: string | number;
+    inputType: string;
     maxLength: string | number;
     clearable: boolean;
-    autofocus: boolean;
-    confirmType: SearchbarConfirmType;
-    inputType: string;
     clearIcon: Record<string, any>;
     inputBackground: string;
     focusStyle: Record<string, any>;
+    autofocus: boolean;
+    readonly: boolean;
+    inputAlign: SearchbarInputAlign;
+    confirmType: SearchbarConfirmType;
     cursorSpacing: number;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutSearchbar: typeof _default;
-  }
+    interface GlobalComponents {
+        NutSearchbar: typeof _default;
+    }
 }

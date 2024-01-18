@@ -2,7 +2,7 @@ import { PropType } from 'vue';
 import { PaginationMode } from './types';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     modelValue: {
@@ -94,8 +94,8 @@ declare const _default: Install< import("vue").DefineComponent<{
     onChange?: ((...args: any[]) => any) | undefined;
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    modelValue: number;
     mode: PaginationMode;
+    modelValue: number;
     prevText: string;
     nextText: string;
     pageCount: string | number;
@@ -107,7 +107,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutPagination: typeof _default;
-  }
+    interface GlobalComponents {
+        NutPagination: typeof _default;
+    }
 }

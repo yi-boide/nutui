@@ -2,7 +2,7 @@ import { PropType, CSSProperties } from 'vue';
 import { SliderValue } from './type';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     range: {
@@ -60,15 +60,15 @@ declare const _default: Install< import("vue").DefineComponent<{
     marksStyle: (mark: number) => CSSProperties;
     marksList: import("vue").ComputedRef<number[]>;
     tickStyle: (mark: number) => CSSProperties;
+    disabled: import("vue").Ref<boolean>;
     vertical: import("vue").Ref<boolean>;
     range: import("vue").Ref<boolean>;
-    disabled: import("vue").Ref<boolean>;
     modelValue: import("vue").Ref<SliderValue>;
+    max: import("vue").Ref<string | number>;
     marks: import("vue").Ref<Record<string, any>>;
     hiddenRange: import("vue").Ref<boolean>;
     hiddenTag: import("vue").Ref<boolean>;
     min: import("vue").Ref<string | number>;
-    max: import("vue").Ref<string | number>;
     step: import("vue").Ref<string | number>;
     activeColor: import("vue").Ref<string | undefined>;
     inactiveColor: import("vue").Ref<string | undefined>;
@@ -138,21 +138,21 @@ declare const _default: Install< import("vue").DefineComponent<{
     onDragEnd?: ((...args: any[]) => any) | undefined;
     onDragStart?: ((...args: any[]) => any) | undefined;
 }, {
+    disabled: boolean;
     vertical: boolean;
     range: boolean;
-    disabled: boolean;
     modelValue: SliderValue;
+    max: string | number;
     marks: Record<string, any>;
     hiddenRange: boolean;
     hiddenTag: boolean;
     min: string | number;
-    max: string | number;
     step: string | number;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutRange: typeof _default;
-  }
+    interface GlobalComponents {
+        NutRange: typeof _default;
+    }
 }

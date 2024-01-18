@@ -1,6 +1,6 @@
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     data: {
@@ -57,13 +57,13 @@ declare const _default: Install< import("vue").DefineComponent<{
     };
 }>> & {
     onClickItem?: ((...args: any[]) => any) | undefined;
+    onAdd?: ((...args: any[]) => any) | undefined;
     onDelIcon?: ((...args: any[]) => any) | undefined;
     onEditIcon?: ((...args: any[]) => any) | undefined;
     onLongCopy?: ((...args: any[]) => any) | undefined;
     onLongSet?: ((...args: any[]) => any) | undefined;
     onLongDel?: ((...args: any[]) => any) | undefined;
     onSwipeDel?: ((...args: any[]) => any) | undefined;
-    onAdd?: ((...args: any[]) => any) | undefined;
 }, {
     data: unknown[];
     longPress: boolean;
@@ -74,7 +74,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutAddressList: typeof _default;
-  }
+    interface GlobalComponents {
+        NutAddressList: typeof _default;
+    }
 }

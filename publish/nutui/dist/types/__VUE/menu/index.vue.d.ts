@@ -2,7 +2,7 @@ import { PropType } from 'vue';
 import { MenuDirection } from './types';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     activeColor: {
@@ -30,7 +30,7 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: string;
     };
     scrollFixed: {
-        type: (BooleanConstructor | NumberConstructor | StringConstructor)[];
+        type: (NumberConstructor | StringConstructor | BooleanConstructor)[];
         default: boolean;
     };
     titleClass: {
@@ -73,7 +73,7 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: string;
     };
     scrollFixed: {
-        type: (BooleanConstructor | NumberConstructor | StringConstructor)[];
+        type: (NumberConstructor | StringConstructor | BooleanConstructor)[];
         default: boolean;
     };
     titleClass: {
@@ -85,15 +85,15 @@ declare const _default: Install< import("vue").DefineComponent<{
     duration: string | number;
     lockScroll: boolean;
     closeOnClickOverlay: boolean;
-    activeColor: string;
     direction: MenuDirection;
+    activeColor: string;
     scrollFixed: string | number | boolean;
     titleClass: string;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutMenu: typeof _default;
-  }
+    interface GlobalComponents {
+        NutMenu: typeof _default;
+    }
 }

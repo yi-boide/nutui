@@ -1,6 +1,6 @@
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     bottom: {
@@ -81,10 +81,10 @@ declare const _default: Install< import("vue").DefineComponent<{
 }>> & {
     onClick?: ((...args: any[]) => any) | undefined;
 }, {
+    bottom: number;
+    right: number;
     zIndex: number;
     duration: number;
-    right: number;
-    bottom: number;
     elId: string;
     distance: number;
     isAnimation: boolean;
@@ -92,7 +92,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutBacktop: typeof _default;
-  }
+    interface GlobalComponents {
+        NutBacktop: typeof _default;
+    }
 }

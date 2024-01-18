@@ -1,6 +1,6 @@
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     data: {
@@ -37,17 +37,17 @@ declare const _default: Install< import("vue").DefineComponent<{
     };
 }>> & {
     onSubmit?: ((...args: any[]) => any) | undefined;
-    onOnSubmit?: ((...args: any[]) => any) | undefined;
     onScrollBottom?: ((...args: any[]) => any) | undefined;
+    onOnSubmit?: ((...args: any[]) => any) | undefined;
 }, {
-    data: unknown[];
     submit: boolean;
+    data: unknown[];
     formValue: Record<string, any>;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutInvoice: typeof _default;
-  }
+    interface GlobalComponents {
+        NutInvoice: typeof _default;
+    }
 }

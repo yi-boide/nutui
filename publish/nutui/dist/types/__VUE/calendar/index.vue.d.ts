@@ -1,7 +1,7 @@
 import { CalendarRef } from '../calendaritem/type';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     type: {
@@ -74,7 +74,9 @@ declare const _default: Install< import("vue").DefineComponent<{
     };
     disabledDate: FunctionConstructor;
 }, {
+    visible: import("vue").WritableComputedRef<boolean>;
     closePopup: () => void;
+    opened: () => void;
     update: () => void;
     close: () => void;
     select: (param: any) => void;
@@ -161,17 +163,17 @@ declare const _default: Install< import("vue").DefineComponent<{
     "onUpdate:visible"?: ((...args: any[]) => any) | undefined;
     onChoose?: ((...args: any[]) => any) | undefined;
 }, {
+    type: string;
     title: string;
     visible: boolean;
     lockScroll: boolean;
-    type: string;
-    confirmText: string;
+    poppable: boolean;
     isAutoBackFill: boolean;
     toDateAnimation: boolean;
-    poppable: boolean;
     showTitle: boolean;
     showSubTitle: boolean;
     showToday: boolean;
+    confirmText: string;
     startText: string;
     endText: string;
     startDate: string;
@@ -181,7 +183,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutCalendar: typeof _default;
-  }
+    interface GlobalComponents {
+        NutCalendar: typeof _default;
+    }
 }

@@ -2,7 +2,7 @@ import { CSSProperties, PropType } from 'vue';
 import { ImageInterface } from './types';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     image: {
@@ -109,18 +109,18 @@ declare const _default: Install< import("vue").DefineComponent<{
     video: Record<string, any>;
     image: ImageInterface;
     show: boolean;
-    maxZoom: number;
     rootWidth: number;
     rootHeight: number;
     contentClose: boolean;
     initNo: number;
     showIndex: boolean;
     minZoom: number;
+    maxZoom: number;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutImagePreview: typeof _default;
-  }
+    interface GlobalComponents {
+        NutImagePreview: typeof _default;
+    }
 }

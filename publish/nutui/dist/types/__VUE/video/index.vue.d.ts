@@ -1,7 +1,7 @@
 import { Ref } from 'vue';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     source: {
@@ -80,7 +80,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     onTime: Ref<((...args: any[]) => any) | undefined>;
     onPlayend: Ref<((...args: any[]) => any) | undefined>;
     root: Ref<any>;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("time" | "click" | "pause" | "play" | "playend")[], "time" | "click" | "pause" | "play" | "playend", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("click" | "time" | "pause" | "play" | "playend")[], "click" | "time" | "pause" | "play" | "playend", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     source: {
         type: ObjectConstructor;
         default: {};
@@ -119,7 +119,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutVideo: typeof _default;
-  }
+    interface GlobalComponents {
+        NutVideo: typeof _default;
+    }
 }

@@ -5,7 +5,7 @@ export interface keys {
 }
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     confirmText: {
@@ -68,7 +68,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     root: Ref<HTMLElement | undefined>;
     show: Ref<boolean>;
     translate: (keyPath: string, ...args: unknown[]) => any;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("delete" | "input" | "close" | "update:visible" | "update:modelValue")[], "delete" | "input" | "close" | "update:visible" | "update:modelValue", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("input" | "delete" | "close" | "update:visible" | "update:modelValue")[], "input" | "delete" | "close" | "update:visible" | "update:modelValue", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     confirmText: {
         type: StringConstructor;
         default: string;
@@ -120,22 +120,22 @@ declare const _default: Install< import("vue").DefineComponent<{
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     onDelete?: ((...args: any[]) => any) | undefined;
 }, {
+    type: string;
     title: string;
     overlay: boolean;
     visible: boolean;
     lockScroll: boolean;
-    type: string;
     popClass: string;
     modelValue: string;
-    confirmText: string;
     maxlength: string | number;
+    confirmText: string;
     customKey: string[];
     randomKeys: boolean;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutNumberKeyboard: typeof _default;
-  }
+    interface GlobalComponents {
+        NutNumberKeyboard: typeof _default;
+    }
 }

@@ -2,7 +2,7 @@ import { Ref } from 'vue';
 import { CascaderValue, CascaderOption } from './types';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     modelValue: ArrayConstructor;
@@ -227,7 +227,9 @@ declare const _default: Install< import("vue").DefineComponent<{
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
     onPathChange?: ((...args: any[]) => any) | undefined;
 }, {
+    round: boolean;
     style: Record<string, any>;
+    transition: string;
     overlay: boolean;
     visible: boolean;
     zIndex: string | number;
@@ -236,9 +238,7 @@ declare const _default: Install< import("vue").DefineComponent<{
     lockScroll: boolean;
     overlayStyle: Record<string, any>;
     closeOnClickOverlay: boolean;
-    round: boolean;
     position: string;
-    transition: string;
     popClass: string;
     closeable: boolean;
     closeIconPosition: string;
@@ -247,17 +247,17 @@ declare const _default: Install< import("vue").DefineComponent<{
     teleport: string | Element;
     teleportDisable: boolean;
     safeAreaInsetBottom: boolean;
-    poppable: boolean;
     options: unknown[];
     lazy: boolean;
     valueKey: string;
     textKey: string;
     childrenKey: string;
+    poppable: boolean;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutCascader: typeof _default;
-  }
+    interface GlobalComponents {
+        NutCascader: typeof _default;
+    }
 }

@@ -2,7 +2,7 @@ import { PropType, CSSProperties } from 'vue';
 import { ImageFit } from './type';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     src: StringConstructor;
@@ -104,23 +104,23 @@ declare const _default: Install< import("vue").DefineComponent<{
     };
 }>> & {
     onClick?: ((...args: any[]) => any) | undefined;
-    onError?: ((...args: any[]) => any) | undefined;
     onLoad?: ((...args: any[]) => any) | undefined;
+    onError?: ((...args: any[]) => any) | undefined;
 }, {
     round: boolean;
-    position: string;
     width: string;
     height: string;
-    alt: string;
-    lazyLoad: boolean;
+    position: string;
     fit: ImageFit;
+    alt: string;
     showError: boolean;
     showLoading: boolean;
+    lazyLoad: boolean;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutImage: typeof _default;
-  }
+    interface GlobalComponents {
+        NutImage: typeof _default;
+    }
 }

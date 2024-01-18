@@ -39,13 +39,14 @@ var __async = (__this, __arguments, generator) => {
   });
 };
 import { reactive, ref, computed, onMounted, watch, toRefs, resolveComponent, openBlock, createElementBlock, Fragment, createElementVNode, renderSlot, createTextVNode, withModifiers, toDisplayString, withDirectives, normalizeStyle, normalizeClass, createVNode, withCtx, vShow } from "vue";
-import NutButton from "../button/Button.js";
+import { Button as _sfc_main$1 } from "../button/Button.js";
 import { c as createComponent } from "../component-TCzwHGVq.js";
 import { a as preventDefault, c as clamp } from "../util-WZB3Ltgx.js";
 import { IconFont } from "@nutui/icons-vue-taro";
 import { u as useTouch } from "../index-084nl_oE.js";
 import Taro, { useReady } from "@tarojs/taro";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
+import "../with-install-p59gYYU_.js";
 const compareVersion = (v1Old, v2Old) => {
   let v1 = v1Old.split(".");
   let v2 = v2Old.split(".");
@@ -93,7 +94,7 @@ function easySetFillStyle(systemInfo, canvasContext, color) {
 const { create } = createComponent("avatar-cropper");
 const _sfc_main = create({
   components: {
-    NutButton,
+    NutButton: _sfc_main$1,
     IconFont
   },
   props: {
@@ -120,6 +121,10 @@ const _sfc_main = create({
     confirmText: {
       type: String,
       default: "确定"
+    },
+    shape: {
+      type: String,
+      default: "square"
     },
     sizeType: {
       type: Array,
@@ -604,9 +609,9 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         onTouchcancel: _cache[4] || (_cache[4] = (...args) => _ctx.onTouchEnd && _ctx.onTouchEnd(...args))
       }, [
         createElementVNode("view", {
-          class: "highlight",
+          class: normalizeClass(["highlight", { highlight__round: _ctx.shape === "round" }]),
           style: normalizeStyle(_ctx.highlightStyle)
-        }, null, 4)
+        }, null, 6)
       ], 32),
       createTextVNode(),
       createElementVNode("view", {

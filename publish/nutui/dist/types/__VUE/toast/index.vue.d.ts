@@ -1,7 +1,7 @@
 import { PropType, Component } from 'vue';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     id: StringConstructor;
@@ -73,9 +73,9 @@ declare const _default: Install< import("vue").DefineComponent<{
         'nut-toast-icon-no-animation': boolean;
     })[]>;
     onAfterLeave: () => void;
-    renderIcon: (icon: Component, props?: any) => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+    renderIcon: (icon: Component, props?: any) => "" | import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
         [key: string]: any;
-    }> | "";
+    }>;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "close"[], "close", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     id: StringConstructor;
     msg: StringConstructor;
@@ -137,24 +137,24 @@ declare const _default: Install< import("vue").DefineComponent<{
 }>> & {
     onClose?: ((...args: any[]) => any) | undefined;
 }, {
+    type: string;
     size: string | number;
     title: string;
+    icon: Component;
+    bottom: string;
     center: boolean;
     duration: number;
     closeOnClickOverlay: boolean;
-    type: string;
     cover: boolean;
-    bottom: string;
-    icon: Component;
-    bgColor: string;
     textAlignCenter: boolean;
     loadingRotate: boolean;
+    bgColor: string;
     coverColor: string;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutToast: typeof _default;
-  }
+    interface GlobalComponents {
+        NutToast: typeof _default;
+    }
 }

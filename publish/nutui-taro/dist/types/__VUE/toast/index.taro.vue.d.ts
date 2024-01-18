@@ -1,7 +1,7 @@
 import { Component, PropType } from 'vue';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     id: StringConstructor;
@@ -91,9 +91,9 @@ declare const _default: Install< import("vue").DefineComponent<{
         'nut-toast-cover'?: undefined;
     } | undefined)[]>;
     onAfterLeave: () => void;
-    renderIcon: (icon: Component, props?: any) => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
+    renderIcon: (icon: Component, props?: any) => "" | import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
         [key: string]: any;
-    }> | "";
+    }>;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("update:visible" | "closed")[], "update:visible" | "closed", import("vue").PublicProps, Readonly<import("vue").ExtractPropTypes<{
     id: StringConstructor;
     msg: StringConstructor;
@@ -160,25 +160,25 @@ declare const _default: Install< import("vue").DefineComponent<{
     "onUpdate:visible"?: ((...args: any[]) => any) | undefined;
     onClosed?: ((...args: any[]) => any) | undefined;
 }, {
+    type: string;
     size: string | number;
     title: string;
+    icon: Component;
+    bottom: string;
     center: boolean;
     visible: boolean;
     duration: number;
     closeOnClickOverlay: boolean;
-    type: string;
     cover: boolean;
-    bottom: string;
-    icon: Component;
-    bgColor: string;
     textAlignCenter: boolean;
     loadingRotate: boolean;
+    bgColor: string;
     coverColor: string;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutToast: typeof _default;
-  }
+    interface GlobalComponents {
+        NutToast: typeof _default;
+    }
 }

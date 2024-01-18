@@ -1,6 +1,8 @@
+import type { PropType } from 'vue';
+import { CheckboxTextPosition, CheckboxShape } from './types';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     modelValue: {
@@ -12,7 +14,7 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: boolean;
     };
     textPosition: {
-        type: StringConstructor;
+        type: PropType<CheckboxTextPosition>;
         default: string;
     };
     iconSize: {
@@ -28,7 +30,7 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: boolean;
     };
     shape: {
-        type: StringConstructor;
+        type: PropType<CheckboxShape>;
         default: string;
     };
 }, () => import("vue").VNode<import("vue").RendererNode, import("vue").RendererElement, {
@@ -43,7 +45,7 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: boolean;
     };
     textPosition: {
-        type: StringConstructor;
+        type: PropType<CheckboxTextPosition>;
         default: string;
     };
     iconSize: {
@@ -59,25 +61,25 @@ declare const _default: Install< import("vue").DefineComponent<{
         default: boolean;
     };
     shape: {
-        type: StringConstructor;
+        type: PropType<CheckboxShape>;
         default: string;
     };
 }>> & {
     onChange?: ((...args: any[]) => any) | undefined;
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    label: string;
+    shape: CheckboxShape;
     disabled: boolean;
+    label: string;
     modelValue: boolean;
-    shape: string;
-    textPosition: string;
+    textPosition: CheckboxTextPosition;
     iconSize: string | number;
     indeterminate: boolean;
 }, {}>>;
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutCheckbox: typeof _default;
-  }
+    interface GlobalComponents {
+        NutCheckbox: typeof _default;
+    }
 }

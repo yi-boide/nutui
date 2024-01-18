@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'vue';
 
 declare type Install<T> = T & {
-  install(app: import('vue').App): void;
+    install(app: import('vue').App): void;
 };
 declare const _default: Install< import("vue").DefineComponent<{
     title: {
@@ -107,9 +107,9 @@ declare const _default: Install< import("vue").DefineComponent<{
 }, {
     size: string;
     title: string;
-    replace: boolean;
-    center: boolean;
     desc: string;
+    center: boolean;
+    replace: boolean;
     subTitle: string;
     descTextAlign: string;
     isLink: boolean;
@@ -120,7 +120,7 @@ declare const _default: Install< import("vue").DefineComponent<{
 export default _default;
 
 declare module 'vue' {
-  interface GlobalComponents {
-      NutCell: typeof _default;
-  }
+    interface GlobalComponents {
+        NutCell: typeof _default;
+    }
 }
