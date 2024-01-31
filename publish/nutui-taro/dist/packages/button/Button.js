@@ -17,7 +17,7 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-import { defineComponent, toRefs, computed, openBlock, createElementBlock, normalizeClass, normalizeStyle, unref, createElementVNode, createBlock, createCommentVNode, createTextVNode, renderSlot } from "vue";
+import { defineComponent, computed, openBlock, createElementBlock, normalizeClass, normalizeStyle, unref, createElementVNode, createBlock, createCommentVNode, createTextVNode, renderSlot } from "vue";
 import { Loading } from "@nutui/icons-vue-taro";
 import Taro from "@tarojs/taro";
 import { w as withInstall } from "../with-install-p59gYYU_.js";
@@ -28,50 +28,22 @@ const _sfc_main = /* @__PURE__ */ defineComponent(__spreadProps(__spreadValues({
 }), {
   __name: "button.taro",
   props: {
-    color: {
-      type: String,
-      default: ""
-    },
-    shape: {
-      type: String,
-      default: "round"
-    },
-    plain: {
-      type: Boolean,
-      default: false
-    },
-    loading: {
-      type: Boolean,
-      default: false
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    type: {
-      type: String,
-      default: "default"
-    },
-    formType: {
-      type: String,
-      default: "button"
-    },
-    size: {
-      type: String,
-      default: "normal"
-    },
-    block: {
-      type: Boolean,
-      default: false
-    }
+    color: { default: "" },
+    shape: { default: "round" },
+    plain: { type: Boolean, default: false },
+    loading: { type: Boolean, default: false },
+    disabled: { type: Boolean, default: false },
+    type: { default: "default" },
+    size: { default: "normal" },
+    block: { type: Boolean, default: false },
+    formType: { default: "button" }
   },
   emits: ["click"],
   setup(__props, { emit: __emit }) {
     const props = __props;
     const emit = __emit;
-    const { type, size, shape, disabled, loading, color, plain, block } = toRefs(props);
     const handleClick = (event) => {
-      if (!loading.value && !disabled.value) {
+      if (!props.loading && !props.disabled) {
         emit("click", event);
       }
     };
@@ -79,26 +51,26 @@ const _sfc_main = /* @__PURE__ */ defineComponent(__spreadProps(__spreadValues({
       const prefixCls = "nut-button";
       return {
         [prefixCls]: true,
-        [`${prefixCls}--${type.value}`]: type.value,
-        [`${prefixCls}--${size.value}`]: size.value,
-        [`${prefixCls}--${shape.value}`]: shape.value,
-        [`${prefixCls}--plain`]: plain.value,
-        [`${prefixCls}--block`]: block.value,
-        [`${prefixCls}--disabled`]: disabled.value,
-        [`${prefixCls}--loading`]: loading.value
+        [`${prefixCls}--${props.type}`]: props.type,
+        [`${prefixCls}--${props.size}`]: props.size,
+        [`${prefixCls}--${props.shape}`]: props.shape,
+        [`${prefixCls}--plain`]: props.plain,
+        [`${prefixCls}--block`]: props.block,
+        [`${prefixCls}--disabled`]: props.disabled,
+        [`${prefixCls}--loading`]: props.loading
       };
     });
     const getStyle = computed(() => {
       let style = {};
-      if (color == null ? void 0 : color.value) {
+      if (props.color) {
         style = {
-          color: plain.value ? color.value : "#fff",
-          background: plain.value ? "#fff" : `border-box ${color.value}`
+          color: props.plain ? props.color : "#fff",
+          background: props.plain ? "#fff" : `border-box ${props.color}`
         };
-        if (color.value.includes("gradient")) {
+        if (props.color.includes("gradient")) {
           style.borderColor = "transparent";
         } else {
-          style.borderColor = color.value;
+          style.borderColor = props.color;
         }
       }
       return style;
@@ -107,21 +79,21 @@ const _sfc_main = /* @__PURE__ */ defineComponent(__spreadProps(__spreadValues({
       return openBlock(), createElementBlock("button", {
         class: normalizeClass(classes.value),
         style: normalizeStyle(getStyle.value),
-        type: unref(Taro).getEnv() === unref(Taro).ENV_TYPE.WEB ? __props.formType : void 0,
-        formType: __props.formType === "button" ? void 0 : __props.formType,
+        type: unref(Taro).getEnv() === unref(Taro).ENV_TYPE.WEB ? _ctx.formType : void 0,
+        formType: _ctx.formType === "button" ? void 0 : _ctx.formType,
         onClick: handleClick
       }, [
         createElementVNode("view", _hoisted_2, [
-          unref(loading) ? (openBlock(), createBlock(unref(Loading), {
+          _ctx.loading ? (openBlock(), createBlock(unref(Loading), {
             key: 0,
             class: "nut-icon-loading"
           })) : createCommentVNode("", true),
           createTextVNode(),
-          _ctx.$slots.icon && !unref(loading) ? renderSlot(_ctx.$slots, "icon", { key: 1 }) : createCommentVNode("", true),
+          _ctx.$slots.icon && !_ctx.loading ? renderSlot(_ctx.$slots, "icon", { key: 1 }) : createCommentVNode("", true),
           createTextVNode(),
           _ctx.$slots.default ? (openBlock(), createElementBlock("view", {
             key: 2,
-            class: normalizeClass({ "nut-button__text": _ctx.$slots.icon || unref(loading) })
+            class: normalizeClass({ "nut-button__text": _ctx.$slots.icon || _ctx.loading })
           }, [
             renderSlot(_ctx.$slots, "default")
           ], 2)) : createCommentVNode("", true)

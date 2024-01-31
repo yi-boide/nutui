@@ -463,50 +463,22 @@ var __async = (__this, __arguments, generator) => {
   }), {
     __name: "button.taro",
     props: {
-      color: {
-        type: String,
-        default: ""
-      },
-      shape: {
-        type: String,
-        default: "round"
-      },
-      plain: {
-        type: Boolean,
-        default: false
-      },
-      loading: {
-        type: Boolean,
-        default: false
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      type: {
-        type: String,
-        default: "default"
-      },
-      formType: {
-        type: String,
-        default: "button"
-      },
-      size: {
-        type: String,
-        default: "normal"
-      },
-      block: {
-        type: Boolean,
-        default: false
-      }
+      color: { default: "" },
+      shape: { default: "round" },
+      plain: { type: Boolean, default: false },
+      loading: { type: Boolean, default: false },
+      disabled: { type: Boolean, default: false },
+      type: { default: "default" },
+      size: { default: "normal" },
+      block: { type: Boolean, default: false },
+      formType: { default: "button" }
     },
     emits: ["click"],
     setup(__props, { emit: __emit }) {
       const props = __props;
       const emit = __emit;
-      const { type, size, shape, disabled, loading, color, plain, block } = vue.toRefs(props);
       const handleClick = (event) => {
-        if (!loading.value && !disabled.value) {
+        if (!props.loading && !props.disabled) {
           emit("click", event);
         }
       };
@@ -514,26 +486,26 @@ var __async = (__this, __arguments, generator) => {
         const prefixCls = "nut-button";
         return {
           [prefixCls]: true,
-          [`${prefixCls}--${type.value}`]: type.value,
-          [`${prefixCls}--${size.value}`]: size.value,
-          [`${prefixCls}--${shape.value}`]: shape.value,
-          [`${prefixCls}--plain`]: plain.value,
-          [`${prefixCls}--block`]: block.value,
-          [`${prefixCls}--disabled`]: disabled.value,
-          [`${prefixCls}--loading`]: loading.value
+          [`${prefixCls}--${props.type}`]: props.type,
+          [`${prefixCls}--${props.size}`]: props.size,
+          [`${prefixCls}--${props.shape}`]: props.shape,
+          [`${prefixCls}--plain`]: props.plain,
+          [`${prefixCls}--block`]: props.block,
+          [`${prefixCls}--disabled`]: props.disabled,
+          [`${prefixCls}--loading`]: props.loading
         };
       });
       const getStyle = vue.computed(() => {
         let style = {};
-        if (color == null ? void 0 : color.value) {
+        if (props.color) {
           style = {
-            color: plain.value ? color.value : "#fff",
-            background: plain.value ? "#fff" : `border-box ${color.value}`
+            color: props.plain ? props.color : "#fff",
+            background: props.plain ? "#fff" : `border-box ${props.color}`
           };
-          if (color.value.includes("gradient")) {
+          if (props.color.includes("gradient")) {
             style.borderColor = "transparent";
           } else {
-            style.borderColor = color.value;
+            style.borderColor = props.color;
           }
         }
         return style;
@@ -542,21 +514,21 @@ var __async = (__this, __arguments, generator) => {
         return vue.openBlock(), vue.createElementBlock("button", {
           class: vue.normalizeClass(classes.value),
           style: vue.normalizeStyle(getStyle.value),
-          type: vue.unref(Taro).getEnv() === vue.unref(Taro).ENV_TYPE.WEB ? __props.formType : void 0,
-          formType: __props.formType === "button" ? void 0 : __props.formType,
+          type: vue.unref(Taro).getEnv() === vue.unref(Taro).ENV_TYPE.WEB ? _ctx.formType : void 0,
+          formType: _ctx.formType === "button" ? void 0 : _ctx.formType,
           onClick: handleClick
         }, [
           vue.createElementVNode("view", _hoisted_2$12, [
-            vue.unref(loading) ? (vue.openBlock(), vue.createBlock(vue.unref(iconsVueTaro.Loading), {
+            _ctx.loading ? (vue.openBlock(), vue.createBlock(vue.unref(iconsVueTaro.Loading), {
               key: 0,
               class: "nut-icon-loading"
             })) : vue.createCommentVNode("", true),
             vue.createTextVNode(),
-            _ctx.$slots.icon && !vue.unref(loading) ? vue.renderSlot(_ctx.$slots, "icon", { key: 1 }) : vue.createCommentVNode("", true),
+            _ctx.$slots.icon && !_ctx.loading ? vue.renderSlot(_ctx.$slots, "icon", { key: 1 }) : vue.createCommentVNode("", true),
             vue.createTextVNode(),
             _ctx.$slots.default ? (vue.openBlock(), vue.createElementBlock("view", {
               key: 2,
-              class: vue.normalizeClass({ "nut-button__text": _ctx.$slots.icon || vue.unref(loading) })
+              class: vue.normalizeClass({ "nut-button__text": _ctx.$slots.icon || _ctx.loading })
             }, [
               vue.renderSlot(_ctx.$slots, "default")
             ], 2)) : vue.createCommentVNode("", true)
@@ -904,10 +876,6 @@ var __async = (__this, __arguments, generator) => {
     closeIconPosition: {
       type: String,
       default: "top-right"
-    },
-    closeIcon: {
-      type: String,
-      default: "close"
     },
     destroyOnClose: {
       type: Boolean,
@@ -1395,22 +1363,10 @@ var __async = (__this, __arguments, generator) => {
   }), {
     __name: "divider.taro",
     props: {
-      contentPosition: {
-        type: String,
-        default: "center"
-      },
-      dashed: {
-        type: Boolean,
-        default: false
-      },
-      hairline: {
-        type: Boolean,
-        default: true
-      },
-      direction: {
-        type: String,
-        default: "horizontal"
-      }
+      contentPosition: { default: "center" },
+      dashed: { type: Boolean, default: false },
+      hairline: { type: Boolean, default: true },
+      direction: { default: "horizontal" }
     },
     setup(__props) {
       const props = __props;
@@ -1437,7 +1393,7 @@ var __async = (__this, __arguments, generator) => {
         return vue.openBlock(), vue.createElementBlock("view", {
           class: vue.normalizeClass(classes.value)
         }, [
-          __props.direction === "horizontal" ? vue.renderSlot(_ctx.$slots, "default", { key: 0 }) : vue.createCommentVNode("", true)
+          _ctx.direction === "horizontal" ? vue.renderSlot(_ctx.$slots, "default", { key: 0 }) : vue.createCommentVNode("", true)
         ], 2);
       };
     }
@@ -5210,7 +5166,6 @@ var __async = (__this, __arguments, generator) => {
       "pop-class": "nut-cascader__popup",
       round: "",
       closeable: _ctx.closeable,
-      "close-icon": _ctx.closeIcon,
       "destroy-on-close": false,
       "close-icon-position": _ctx.closeIconPosition,
       "lock-scroll": _ctx.lockScroll,
@@ -5239,7 +5194,7 @@ var __async = (__this, __arguments, generator) => {
         }, null, 8, ["model-value", "options", "lazy", "lazy-load", "value-key", "text-key", "children-key", "convert-config", "visible", "onChange", "onPathChange"])
       ]),
       _: 1
-    }, 8, ["visible", "closeable", "close-icon", "close-icon-position", "lock-scroll", "catch-move", "z-index"])) : (vue.openBlock(), vue.createBlock(_component_nut_cascader_item, {
+    }, 8, ["visible", "closeable", "close-icon-position", "lock-scroll", "catch-move", "z-index"])) : (vue.openBlock(), vue.createBlock(_component_nut_cascader_item, {
       key: 1,
       "model-value": _ctx.innerValue,
       options: _ctx.options,
@@ -11790,14 +11745,26 @@ var __async = (__this, __arguments, generator) => {
     },
     props: {
       id: String,
-      color: { type: String, default: "" },
-      msg: { type: String, default: "" },
-      duration: { type: Number, default: 3e3 },
+      color: {
+        type: String,
+        default: ""
+      },
+      msg: {
+        type: String,
+        default: ""
+      },
+      duration: {
+        type: Number,
+        default: 3e3
+      },
       className: {
         type: String,
         default: ""
       },
-      background: { type: String, default: "" },
+      background: {
+        type: String,
+        default: ""
+      },
       type: {
         type: String,
         default: "danger"
