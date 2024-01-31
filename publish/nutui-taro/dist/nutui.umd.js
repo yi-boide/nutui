@@ -6606,30 +6606,12 @@ var __async = (__this, __arguments, generator) => {
   }), {
     __name: "calendar-card.taro",
     props: {
-      type: {
-        type: String,
-        default: "single"
-      },
-      firstDayOfWeek: {
-        type: Number,
-        default: 0
-      },
-      modelValue: {
-        type: [Object, Array],
-        default: () => []
-      },
-      startDate: {
-        type: Date,
-        default: null
-      },
-      endDate: {
-        type: Date,
-        default: null
-      },
-      disableDay: {
-        type: Function,
-        default: () => false
-      }
+      type: { default: "single" },
+      firstDayOfWeek: { default: 0 },
+      modelValue: { default: null },
+      startDate: { default: null },
+      endDate: { default: null },
+      disableDay: { type: Function, default: () => false }
     },
     emits: ["update:modelValue", "change", "dayClick", "pageChange"],
     setup(__props, { expose: __expose, emit: __emit }) {
@@ -8262,6 +8244,7 @@ var __async = (__this, __arguments, generator) => {
       const change = (event) => {
         const input = event.target;
         emit("update:modelValue", input.value, event);
+        emit("change", input.value, event);
       };
       const emitChange = (value, event) => {
         let output_value = fixedDecimalPlaces(value);
