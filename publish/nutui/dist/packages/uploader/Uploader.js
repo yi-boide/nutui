@@ -4,15 +4,14 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
   return value;
 };
-import { ref, watch, h, reactive, resolveComponent, openBlock, createElementBlock, renderSlot, createBlock, resolveDynamicComponent, createCommentVNode, Fragment, renderList, normalizeClass, createElementVNode, toDisplayString, createVNode } from "vue";
+import { toRef, ref, watch, h, reactive, resolveComponent, openBlock, createElementBlock, renderSlot, createBlock, resolveDynamicComponent, createCommentVNode, Fragment, renderList, normalizeClass, createElementVNode, toDisplayString, createVNode } from "vue";
 import { c as createComponent } from "../component-TCzwHGVq.js";
 import { f as funInterceptor } from "../Interceptor-WYVtGbGC.js";
 import NutProgress from "../progress/Progress.js";
 import { Photograph, Failure, Loading, Del, Link } from "@nutui/icons-vue";
 import { u as useLocale } from "../index-s3RgMhc7.js";
+import { u as useFormDisabled } from "../common-LvGbU-A3.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
-import "../util-4Jkyw4BJ.js";
-import "@nutui/nutui/dist/packages/locale/lang";
 class UploadOptions {
   constructor() {
     __publicField(this, "url", "");
@@ -153,6 +152,7 @@ const _sfc_main = create({
     "fileItemClick"
   ],
   setup(props, { emit }) {
+    const disabled = useFormDisabled(toRef(props, "disabled"));
     const translate = useLocale(cN);
     const fileList = ref(props.fileList);
     const uploadQueue = ref([]);
@@ -169,7 +169,7 @@ const _sfc_main = create({
         accept: props.accept,
         multiple: props.multiple,
         name: props.name,
-        disabled: props.disabled
+        disabled: disabled.value
       };
       if (props.capture) {
         params.capture = "camera";
@@ -312,6 +312,8 @@ const _sfc_main = create({
       });
     };
     const onDelete = (file, index2) => {
+      if (disabled.value)
+        return;
       clearUploadQueue(index2);
       funInterceptor(props.beforeDelete, {
         args: [file, fileList.value],
@@ -319,7 +321,7 @@ const _sfc_main = create({
       });
     };
     const onChange = (event) => {
-      if (props.disabled) {
+      if (props.disabled || disabled.value) {
         return;
       }
       const $el = event.target;

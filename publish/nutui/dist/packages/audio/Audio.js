@@ -22,9 +22,6 @@ import { c as createComponent } from "../component-TCzwHGVq.js";
 import { Service } from "@nutui/icons-vue";
 import NutRange from "../range/Range.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
-import "../util-4Jkyw4BJ.js";
-import "../index-084nl_oE.js";
-import "../index-rf29bejW.js";
 const { create } = createComponent("audio");
 const _sfc_main = create({
   props: {

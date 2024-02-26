@@ -14,9 +14,10 @@ var __spreadValues = (a, b) => {
     }
   return a;
 };
-import { ref, reactive, computed, watch, onMounted, h, resolveComponent, openBlock, createElementBlock, normalizeClass, createElementVNode, renderSlot, createCommentVNode, createBlock, resolveDynamicComponent, normalizeStyle, toDisplayString, createTextVNode, withDirectives, createVNode, mergeProps, vShow } from "vue";
-import { c as createComponent } from "../component-TCzwHGVq.js";
+import { toRef, ref, reactive, computed, watch, onMounted, h, resolveComponent, openBlock, createElementBlock, normalizeClass, createElementVNode, renderSlot, createCommentVNode, createBlock, resolveDynamicComponent, normalizeStyle, toDisplayString, createTextVNode, withDirectives, createVNode, mergeProps, vShow } from "vue";
 import { MaskClose } from "@nutui/icons-vue";
+import { c as createComponent } from "../component-TCzwHGVq.js";
+import { u as useFormDisabled } from "../common-LvGbU-A3.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
 function trimExtraChar(value, char, regExp) {
   const index2 = value.indexOf(char);
@@ -141,6 +142,7 @@ const _sfc_main = create({
   emits: ["update:modelValue", "blur", "focus", "clear", "keypress", "click", "clickInput", "confirm"],
   expose: ["focus", "blur", "select"],
   setup(props, { emit }) {
+    const disabled = useFormDisabled(toRef(props, "disabled"));
     const active = ref(false);
     const inputRef = ref();
     const getModelValue = () => {
@@ -159,7 +161,7 @@ const _sfc_main = create({
       const prefixCls = componentName;
       return {
         [prefixCls]: true,
-        [`${prefixCls}--disabled`]: props.disabled,
+        [`${prefixCls}--disabled`]: disabled.value,
         [`${prefixCls}--required`]: props.required,
         [`${prefixCls}--error`]: props.error,
         [`${prefixCls}--border`]: props.border,
@@ -198,14 +200,14 @@ const _sfc_main = create({
       }
     };
     const onFocus = (event) => {
-      if (props.disabled || props.readonly) {
+      if (disabled.value || props.readonly) {
         return;
       }
       active.value = true;
       emit("focus", event);
     };
     const onBlur = (event) => {
-      if (props.disabled || props.readonly) {
+      if (disabled.value || props.readonly) {
         return;
       }
       setTimeout(() => {
@@ -221,7 +223,7 @@ const _sfc_main = create({
     };
     const clear = (event) => {
       event.stopPropagation();
-      if (props.disabled)
+      if (disabled.value)
         return;
       emit("update:modelValue", "", event);
       emit("clear", "", event);
@@ -233,7 +235,7 @@ const _sfc_main = create({
       }
     };
     const onClickInput = (event) => {
-      if (props.disabled) {
+      if (disabled.value) {
         return;
       }
       emit("clickInput", event);
@@ -283,6 +285,7 @@ const _sfc_main = create({
       active,
       classes,
       styles,
+      disabled,
       onInput,
       onFocus,
       onBlur,

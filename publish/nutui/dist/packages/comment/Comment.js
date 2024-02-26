@@ -4,11 +4,6 @@ import { c as createComponent } from "../component-TCzwHGVq.js";
 import NutRate from "../rate/Rate.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
 import { u as useLocale } from "../index-s3RgMhc7.js";
-import "../renderIcon--EgZu5_5.js";
-import "../pxCheck-OnXlN1NC.js";
-import "../index-084nl_oE.js";
-import "@nutui/nutui/dist/packages/locale/lang";
-import "../util-4Jkyw4BJ.js";
 const { create: create$3 } = createComponent("comment-header");
 const _sfc_main$3 = create$3({
   components: {

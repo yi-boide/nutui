@@ -41,12 +41,11 @@ var __async = (__this, __arguments, generator) => {
 import { reactive, ref, computed, onMounted, watch, toRefs, resolveComponent, openBlock, createElementBlock, Fragment, createElementVNode, normalizeClass, renderSlot, createTextVNode, withModifiers, toDisplayString, withDirectives, normalizeStyle, createVNode, withCtx, vShow } from "vue";
 import { Button as _sfc_main$1 } from "../button/Button.js";
 import { c as createComponent } from "../component-TCzwHGVq.js";
-import { a as preventDefault, c as clamp } from "../util-WZB3Ltgx.js";
+import { a as preventDefault, c as clamp } from "../util-Bt8WDYya.js";
 import { IconFont } from "@nutui/icons-vue-taro";
 import { u as useTouch } from "../index-084nl_oE.js";
 import Taro, { useReady } from "@tarojs/taro";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
-import "../with-install-p59gYYU_.js";
 const compareVersion = (v1Old, v2Old) => {
   let v1 = v1Old.split(".");
   let v2 = v2Old.split(".");

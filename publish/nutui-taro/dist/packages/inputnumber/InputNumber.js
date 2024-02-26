@@ -1,7 +1,8 @@
-import { computed, watch, resolveComponent, openBlock, createElementBlock, normalizeClass, createElementVNode, renderSlot, createVNode, createTextVNode, toDisplayString, normalizeStyle } from "vue";
+import { toRef, computed, watch, resolveComponent, openBlock, createElementBlock, normalizeClass, createElementVNode, renderSlot, createVNode, createTextVNode, toDisplayString, normalizeStyle } from "vue";
 import { c as createComponent } from "../component-TCzwHGVq.js";
 import { p as pxCheck } from "../pxCheck-OnXlN1NC.js";
 import { Minus, Plus } from "@nutui/icons-vue-taro";
+import { u as useFormDisabled } from "../common-LvGbU-A3.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
 const { componentName, create } = createComponent("input-number");
 const _sfc_main = create({
@@ -46,11 +47,12 @@ const _sfc_main = create({
   },
   emits: ["update:modelValue", "change", "blur", "focus", "reduce", "add", "overlimit"],
   setup(props, { emit }) {
+    const disabled = useFormDisabled(toRef(props, "disabled"));
     const classes = computed(() => {
       const prefixCls = componentName;
       return {
         [prefixCls]: true,
-        [`${prefixCls}--disabled`]: props.disabled
+        [`${prefixCls}--disabled`]: disabled.value
       };
     });
     const fixedDecimalPlaces = (v) => {
@@ -68,13 +70,13 @@ const _sfc_main = create({
         emit("change", output_value, event);
     };
     const addAllow = (value = Number(props.modelValue)) => {
-      return value < Number(props.max) && !props.disabled;
+      return value < Number(props.max) && !disabled.value;
     };
     const reduceAllow = (value = Number(props.modelValue)) => {
-      return value > Number(props.min) && !props.disabled;
+      return value > Number(props.min) && !disabled.value;
     };
     const reduce = (event) => {
-      if (props.disabled)
+      if (disabled.value)
         return;
       emit("reduce", event);
       let output_value = Number(props.modelValue) - Number(props.step);
@@ -86,7 +88,7 @@ const _sfc_main = create({
       }
     };
     const add = (event) => {
-      if (props.disabled)
+      if (disabled.value)
         return;
       emit("add", event);
       let output_value = Number(props.modelValue) + Number(props.step);
@@ -98,7 +100,7 @@ const _sfc_main = create({
       }
     };
     const focus = (event) => {
-      if (props.disabled)
+      if (disabled.value)
         return;
       if (props.readonly) {
         blur(event);
@@ -107,7 +109,7 @@ const _sfc_main = create({
       emit("focus", event);
     };
     const blur = (event) => {
-      if (props.disabled)
+      if (disabled.value)
         return;
       if (props.readonly)
         return;
@@ -144,6 +146,7 @@ const _sfc_main = create({
     );
     return {
       classes,
+      disabled,
       change,
       blur,
       focus,

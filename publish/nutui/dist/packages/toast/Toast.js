@@ -23,7 +23,6 @@ import { r as renderIcon } from "../renderIcon--EgZu5_5.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
 import { C as CreateComponent } from "../mountComponent-uInXoTMp.js";
 import { Success, Failure, Tips, Loading } from "@nutui/icons-vue";
-import "../util-4Jkyw4BJ.js";
 const { create } = createComponent("toast");
 const _sfc_main = create({
   components: {},
@@ -107,7 +106,7 @@ const _sfc_main = create({
     const show = () => {
       clearTimer();
       if (props.duration) {
-        timer = setTimeout(() => {
+        timer = window.setTimeout(() => {
           hide();
         }, props.duration);
       }
@@ -151,8 +150,9 @@ const _sfc_main = create({
       return ["nut-toast-icon-wrapper", { "nut-toast-icon-no-animation": !props.loadingRotate }];
     });
     const onAfterLeave = () => {
+      var _a;
       clearTimer();
-      props.unmount(props.id);
+      (_a = props.unmount) == null ? void 0 : _a.call(props, props.id);
       props.onClose && props.onClose();
     };
     return {

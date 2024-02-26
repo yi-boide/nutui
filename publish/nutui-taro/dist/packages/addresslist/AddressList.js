@@ -1,17 +1,11 @@
 import { resolveComponent, openBlock, createElementBlock, createElementVNode, renderSlot, toDisplayString, createTextVNode, createCommentVNode, createVNode, ref, h, createBlock, resolveDynamicComponent, withCtx, reactive, watch, onMounted, Fragment, renderList, createSlots } from "vue";
 import { c as createComponent } from "../component-TCzwHGVq.js";
-import { f as floatData } from "../util-WZB3Ltgx.js";
-import { u as useLocale } from "../index-DDx91B18.js";
+import { f as floatData } from "../util-Bt8WDYya.js";
+import { u as useLocale } from "../index-xXrovSQL.js";
 import { Del, Edit } from "@nutui/icons-vue-taro";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
 import { Button as _sfc_main$3 } from "../button/Button.js";
 import NutSwipe from "../swipe/Swipe.js";
-import "@nutui/nutui-taro/dist/packages/locale/lang";
-import "@tarojs/taro";
-import "../with-install-p59gYYU_.js";
-import "../index-084nl_oE.js";
-import "../index-Isui2_f6.js";
-import "../types-qOrhXtA_.js";
 const { create: create$2 } = createComponent("address-list-item");
 const cN$1 = "NutAddressList";
 const _sfc_main$2 = create$2({

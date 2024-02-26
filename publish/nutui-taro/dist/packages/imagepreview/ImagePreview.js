@@ -21,17 +21,11 @@ import { reactive, computed, watch, onMounted, toRefs, resolveComponent, openBlo
 import Taro from "@tarojs/taro";
 import { CircleClose } from "@nutui/icons-vue-taro";
 import { c as createComponent } from "../component-TCzwHGVq.js";
-import { f as funInterceptor } from "../Interceptor-CfVX2DIs.js";
+import { f as funInterceptor } from "../Interceptor-xNdrCqtu.js";
 import { N as NutPopup } from "../index.taro-JFNR7Hum.js";
 import NutSwiper from "../swiper/Swiper.js";
 import NutSwiperItem from "../swiperitem/SwiperItem.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
-import "../util-WZB3Ltgx.js";
-import "../overlay/Overlay.js";
-import "../index-084nl_oE.js";
-import "../index-Isui2_f6.js";
-import "../raf-9SbwNmt2.js";
-import "../types-9wCQwtH3.js";
 const { create } = createComponent("image-preview");
 const _sfc_main = create({
   props: {

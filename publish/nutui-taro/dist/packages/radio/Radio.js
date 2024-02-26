@@ -1,9 +1,4 @@
-import { _ as _sfc_main } from "../index.taro.vue_vue_type_script_lang-PWsSAY8w.js";
-import "vue";
-import "../component-TCzwHGVq.js";
-import "@nutui/icons-vue-taro";
-import "../pxCheck-OnXlN1NC.js";
-import "../types-odSRziQJ.js";
+import { _ as _sfc_main } from "../index.taro.vue_vue_type_script_lang-5BoW5eFB.js";
 export {
   _sfc_main as default
 };

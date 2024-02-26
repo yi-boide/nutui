@@ -3,10 +3,6 @@ import { c as createComponent } from "../component-TCzwHGVq.js";
 import { N as NutPopup } from "../index-wY4t0zYt.js";
 import { u as useLocale } from "../index-s3RgMhc7.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
-import "@nutui/icons-vue";
-import "../overlay/Overlay.js";
-import "../util-4Jkyw4BJ.js";
-import "@nutui/nutui/dist/packages/locale/lang";
 const { create } = createComponent("time-select");
 const cN = "NutTimeSelect";
 const _sfc_main = create({

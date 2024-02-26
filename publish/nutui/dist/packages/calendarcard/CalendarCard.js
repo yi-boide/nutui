@@ -21,8 +21,6 @@ import { h, defineComponent, ref, computed, watchEffect, withDirectives, openBlo
 import { U as Utils } from "../date-djiVNSnJ.js";
 import { u as useLocale } from "../index-s3RgMhc7.js";
 import { w as withInstall } from "../with-install-p59gYYU_.js";
-import "@nutui/nutui/dist/packages/locale/lang";
-import "../util-4Jkyw4BJ.js";
 const Left = () => {
   return h(
     "svg",

@@ -4,9 +4,6 @@ import { N as NutPopup } from "../index-wY4t0zYt.js";
 import { Tips } from "@nutui/icons-vue";
 import { u as useLocale } from "../index-s3RgMhc7.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
-import "../overlay/Overlay.js";
-import "../util-4Jkyw4BJ.js";
-import "@nutui/nutui/dist/packages/locale/lang";
 const { create } = createComponent("short-password");
 const cN = "NutShortPassword";
 const _sfc_main = create({
