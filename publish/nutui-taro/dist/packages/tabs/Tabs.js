@@ -40,15 +40,15 @@ var __async = (__this, __arguments, generator) => {
 };
 import Taro from "@tarojs/taro";
 import { ref, onMounted, reactive, provide, computed, watch, onActivated, nextTick, resolveComponent, openBlock, createElementBlock, normalizeClass, createVNode, normalizeStyle, withCtx, createElementVNode, renderSlot, Fragment, renderList, createCommentVNode, createTextVNode, toDisplayString } from "vue";
-import { _ as _sfc_main$1 } from "../index.taro.vue_vue_type_script_setup_true_lang-SKyMF-aS.js";
+import { _ as _sfc_main$1 } from "../index.taro.vue_vue_type_script_setup_true_lang-JJ7hr71Y.js";
 import { JoySmile } from "@nutui/icons-vue-taro";
-import { c as createComponent } from "../component-TCzwHGVq.js";
-import { T as TypeOfFun } from "../util-Bt8WDYya.js";
-import { p as pxCheck } from "../pxCheck-OnXlN1NC.js";
-import { r as requestAniFrame } from "../raf-9SbwNmt2.js";
-import { u as useTouch } from "../index-084nl_oE.js";
-import { u as useTaroRect } from "../index-d4pC_9mG.js";
-import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
+import { c as createComponent } from "../component-DQf3CENX.js";
+import { T as TypeOfFun } from "../util-CyCQsn5J.js";
+import { p as pxCheck } from "../pxCheck-DN6FYV6q.js";
+import { r as requestAniFrame } from "../raf-CzJhCkQo.js";
+import { u as useTouch } from "../index-I8tfW3Kf.js";
+import { u as useTaroRect } from "../index-m0Wcof-q.js";
+import { _ as _export_sfc } from "../_plugin-vue_export-helper-1tPrXgE0.js";
 const useTabContentTouch = (props, tabMethods, taro, useTaroRect2) => {
   const tabsContentRef = ref();
   const tabsContentRefRect = ref({ width: 0, height: 0 });
@@ -331,12 +331,10 @@ const _sfc_main = create({
           const titleRect = titleRectRef.value[currentIndex.value];
           let to = 0;
           if (props.direction === "vertical") {
-            const DEFAULT_PADDING = 11;
-            const top = titleRects.slice(0, currentIndex.value).reduce((prev, curr) => prev + (curr == null ? void 0 : curr.height) + 0, DEFAULT_PADDING);
+            const top = titleRects.slice(0, currentIndex.value).reduce((prev, curr) => prev + (curr == null ? void 0 : curr.height), 0);
             to = top - (((_c = navRectRef.value) == null ? void 0 : _c.height) - (titleRect == null ? void 0 : titleRect.height)) / 2;
           } else {
-            const DEFAULT_PADDING = 31;
-            const left = titleRects.slice(0, currentIndex.value).reduce((prev, curr) => prev + (curr == null ? void 0 : curr.width) + 20, DEFAULT_PADDING);
+            const left = titleRects.slice(0, currentIndex.value).reduce((prev, curr) => prev + (curr == null ? void 0 : curr.width), 0);
             to = left - (((_d = navRectRef.value) == null ? void 0 : _d.width) - (titleRect == null ? void 0 : titleRect.width)) / 2;
           }
           nextTick(() => {
@@ -453,9 +451,9 @@ const _sfc_main = create({
         return {};
       const px = pxCheck(props.titleGutter);
       if (props.direction === "vertical") {
-        return { marginTop: px, marginBottom: px };
+        return { paddingTop: px, paddingBottom: px };
       }
-      return { marginLeft: px, marginRight: px };
+      return { paddingLeft: px, paddingRight: px };
     });
     return __spreadValues(__spreadValues({
       titles,

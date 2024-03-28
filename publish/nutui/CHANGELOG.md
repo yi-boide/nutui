@@ -1,3 +1,68 @@
+## v4.3.3
+
+`2024-03-20`
+
+Bug Fixes
+
+- uploader: add stop on delete event (#2971) @subordon
+- calendar-card: 选择范围时支持仅选择单个日期 (#2963) @eiinu
+- navbar: remove unused css var @eiinu
+
+Refactors
+
+- move to script setup
+  - backtop, tag @subordon
+  - input-number, rate, progress, circle-progress, swipe, navbar, invoice @eiinu
+
+Other Changes
+
+- test: add some unit tests (#2980) @eiinu
+
+## v4.3.2
+
+`2024-03-11`
+
+Features
+
+- switch: add disabled prop (#2959) @eiinu
+
+Bug Fixes
+
+- popup: 修复 update:visible 事件关闭时重复调用 (#2936) @yang1206
+- form: 修复 disabled 关联子组件收集问题 (#2958) @eiinu
+
+Refactors
+
+- price: move to script setup (#2952) @eiinu
+- layout: move to script setup (#2951) @eiinu
+- animate: move to script setup (#2947) @eiinu
+
+Other Changes
+
+- tabs: add animated-time demo (#2942) @eiinu
+- deps: update to taro 3.6.24 (#2939) @eiinu
+
+## v4.3.1
+
+`2024-02-29`
+
+Features
+
+- form: 新增禁用（disabled）属性 (#2690) @yi-boide
+
+Bug Fixes
+
+- picker: className option (#2926) @eiinu
+
+Refactors
+
+- form: move to script setup (#2923), close #2677 @eiinu
+- collapse: move to script setup (#2907) @eiinu
+
+Reverts
+
+- fix(textarea, taro): 修复 h5 下双向绑定失效的问题 (#2768) (#2935), close #2930
+
 ## v4.3.0
 
 `2024-02-05`

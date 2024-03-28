@@ -18,16 +18,16 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
   return value;
 };
-import { toRef, ref, watch, reactive, resolveComponent, openBlock, createElementBlock, renderSlot, createTextVNode, createBlock, createCommentVNode, Fragment, renderList, normalizeClass, createElementVNode, toDisplayString, createVNode } from "vue";
-import { c as createComponent } from "../component-TCzwHGVq.js";
-import { f as funInterceptor } from "../Interceptor-xNdrCqtu.js";
-import NutProgress from "../progress/Progress.js";
-import { Button as _sfc_main$1 } from "../button/Button.js";
+import { toRef, ref, watch, reactive, resolveComponent, openBlock, createElementBlock, renderSlot, createTextVNode, createBlock, createCommentVNode, Fragment, renderList, normalizeClass, createElementVNode, toDisplayString, createVNode, withModifiers } from "vue";
+import { c as createComponent } from "../component-DQf3CENX.js";
+import { f as funInterceptor } from "../Interceptor-u2SK4X2w.js";
+import { Progress as _sfc_main$1 } from "../progress/Progress.js";
+import { Button as _sfc_main$2 } from "../button/Button.js";
 import Taro from "@tarojs/taro";
 import { Photograph, Failure, Loading, Del, Link } from "@nutui/icons-vue-taro";
-import { u as useLocale } from "../index-xXrovSQL.js";
-import { u as useFormDisabled } from "../common-LvGbU-A3.js";
-import { _ as _export_sfc } from "../_plugin-vue_export-helper-yVxbj29m.js";
+import { u as useLocale } from "../index-CV7DiiiD.js";
+import { u as useFormDisabled } from "../common-DRG0ue26.js";
+import { _ as _export_sfc } from "../_plugin-vue_export-helper-1tPrXgE0.js";
 class UploadOptions {
   constructor() {
     __publicField(this, "url", "");
@@ -155,8 +155,8 @@ const { create } = createComponent("uploader");
 const cN = "NutUploader";
 const _sfc_main = create({
   components: {
-    NutProgress,
-    NutButton: _sfc_main$1,
+    NutProgress: _sfc_main$1,
+    NutButton: _sfc_main$2,
     Photograph,
     Failure,
     Loading,
@@ -579,7 +579,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
               key: 0,
               color: "#808080",
               class: "nut-uploader__preview-img__file__del",
-              onClick: ($event) => _ctx.onDelete(item, index)
+              onClick: withModifiers(($event) => _ctx.onDelete(item, index), ["stop"])
             }, null, 8, ["onClick"])) : createCommentVNode("", true)
           ], 10, _hoisted_13),
           createTextVNode(),
