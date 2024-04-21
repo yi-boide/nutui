@@ -42,11 +42,12 @@ import { ref, onMounted, reactive, provide, computed, watch, onActivated, nextTi
 import NutSticky from "../sticky/Sticky.js";
 import { JoySmile } from "@nutui/icons-vue";
 import { c as createComponent } from "../component-DQf3CENX.js";
-import { T as TypeOfFun } from "../util-6wYEjmEl.js";
+import { T as TypeOfFun } from "../util-DnfK0Qan.js";
 import { p as pxCheck } from "../pxCheck-DN6FYV6q.js";
 import { u as useRect } from "../index-B1qsj2XR.js";
 import { r as requestAniFrame } from "../raf-c01wDYCo.js";
 import { u as useTouch } from "../index-I8tfW3Kf.js";
+import { T as TABS_KEY } from "../types-BXlnzugj.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-1tPrXgE0.js";
 const useTabContentTouch = (props, tabMethods, taro, useTaroRect) => {
   const tabsContentRef = ref();
@@ -231,7 +232,7 @@ const _sfc_main = create({
   setup(props, { emit, slots }) {
     const container = ref(null);
     let stickyFixed;
-    provide("tabsOpiton", {
+    provide(TABS_KEY, {
       activeKey: computed(() => props.modelValue || "0"),
       autoHeight: computed(() => props.autoHeight),
       animatedTime: computed(() => props.animatedTime)

@@ -43,11 +43,12 @@ import { ref, onMounted, reactive, provide, computed, watch, onActivated, nextTi
 import { _ as _sfc_main$1 } from "../index.taro.vue_vue_type_script_setup_true_lang-JJ7hr71Y.js";
 import { JoySmile } from "@nutui/icons-vue-taro";
 import { c as createComponent } from "../component-DQf3CENX.js";
-import { T as TypeOfFun } from "../util-CyCQsn5J.js";
+import { T as TypeOfFun } from "../util-7oDGftbO.js";
 import { p as pxCheck } from "../pxCheck-DN6FYV6q.js";
 import { r as requestAniFrame } from "../raf-CzJhCkQo.js";
 import { u as useTouch } from "../index-I8tfW3Kf.js";
 import { u as useTaroRect } from "../index-m0Wcof-q.js";
+import { T as TABS_KEY } from "../types-BXlnzugj.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-1tPrXgE0.js";
 const useTabContentTouch = (props, tabMethods, taro, useTaroRect2) => {
   const tabsContentRef = ref();
@@ -235,7 +236,7 @@ const _sfc_main = create({
   setup(props, { emit, slots }) {
     const refRandomId = Math.random().toString(36).slice(-8);
     const container = ref(null);
-    provide("tabsOpiton", {
+    provide(TABS_KEY, {
       activeKey: computed(() => props.modelValue || "0"),
       autoHeight: computed(() => props.autoHeight),
       animatedTime: computed(() => props.animatedTime)
