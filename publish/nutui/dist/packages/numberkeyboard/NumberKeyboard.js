@@ -1,6 +1,6 @@
 import { ref, computed, watch, resolveComponent, openBlock, createElementBlock, createVNode, withCtx, createElementVNode, toDisplayString, createCommentVNode, Fragment, renderList, normalizeClass, createTextVNode } from "vue";
 import { c as createComponent } from "../component-DQf3CENX.js";
-import { N as NutPopup } from "../index-uHBD4dfS.js";
+import { N as NutPopup } from "../index-wLaOjIn1.js";
 import { u as useLocale } from "../index-CFigyH92.js";
 import { _ as _export_sfc } from "../_plugin-vue_export-helper-1tPrXgE0.js";
 const { create } = createComponent("number-keyboard");
@@ -51,7 +51,7 @@ const _sfc_main = create({
       default: true
     }
   },
-  emits: ["input", "delete", "close", "blur", "update:modelValue", "update:visible"],
+  emits: ["input", "delete", "close", "blur", "confirm", "update:modelValue", "update:visible"],
   setup(props, { emit }) {
     const translate = useLocale(cN);
     const clickKeyIndex = ref(void 0);
@@ -164,10 +164,14 @@ const _sfc_main = create({
       emit("update:visible", false);
       emit("close");
     }
+    const confirm = () => {
+      emit("confirm");
+    };
     return {
       clickKeyIndex,
       defaultKey,
       closeBoard,
+      confirm,
       onTouchEnd,
       onTouchMove,
       onTouchstart,
@@ -272,7 +276,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
               ]),
               createElementVNode("div", {
                 class: "nut-key__wrapper nut-key__wrapper--finish",
-                onClick: _cache[6] || (_cache[6] = ($event) => _ctx.closeBoard())
+                onClick: _cache[6] || (_cache[6] = (...args) => _ctx.confirm && _ctx.confirm(...args))
               }, [
                 createElementVNode("div", {
                   class: normalizeClass(["nut-key", "nut-key--finish ", { activeFinsh: _ctx.clickKeyIndex == "finish" }])

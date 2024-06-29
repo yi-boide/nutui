@@ -1,3 +1,61 @@
+## v4.3.10
+
+`2024-06-20`
+
+Bug Fixes
+
+- input, textarea: 修改只读禁用属性设置逻辑 (#3104) @eiinu
+
+Other Changes
+
+- docs(input): 修正参数名 (#3088) @hainuo
+
+## v4.3.9
+
+`2024-05-25`
+
+Bug Fixes
+
+- textarea: 修复 slot 嵌套使用 textarea 时的输入失焦问题 (#3084) @eiinu
+- style: hidden scrollbar by default (#3085) @eiinu
+
+## v4.3.8
+
+`2024-05-13`
+
+Bug Fixes
+
+- countdown: emit paused (#3062) @eiinu
+- sticky: 修复滚动事件的监听方式 (#3072) @eiinu
+
+Refactors
+
+- overlay, watermark, badge: move to script setup @eiinu
+
+Other Changes
+
+- searchbar: update unit test (#3070) @eiinu
+
+## v4.3.7
+
+`2024-05-07`
+
+Features
+
+- number-keyboard: add confirm event (#3059) @eiinu
+
+Bug Fixes
+
+- tabs: inject 数据增加 ?. (#3045) @2977938133
+
+Refactors
+
+- input, image: move to script setup @eiinu
+
+Other Changes
+
+- docs: input 更新 align demo 引用名称 (#3044) @ShuTianGit
+
 ## v4.3.6
 
 `2024-04-19`
