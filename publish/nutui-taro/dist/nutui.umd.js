@@ -34,10 +34,7 @@ var __objRest = (source, exclude) => {
     }
   return target;
 };
-var __publicField = (obj, key, value) => {
-  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-  return value;
-};
+var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -387,8 +384,7 @@ var __async = (__this, __arguments, generator) => {
             mergeFormat[keys] = dataOp[mergeMapOps[keys]];
           }
         } else {
-          if (dataOp[keys])
-            mergeFormat[keys] = dataOp[keys];
+          if (dataOp[keys]) mergeFormat[keys] = dataOp[keys];
         }
       });
       return mergeFormat;
@@ -884,8 +880,7 @@ var __async = (__this, __arguments, generator) => {
     };
   }
   const renderIcon = (icon, props) => {
-    if (icon)
-      return vue.h(icon, props);
+    if (icon) return vue.h(icon, props);
     return "";
   };
   const { componentName: componentName$8, create: create$14 } = createComponent("popup");
@@ -1059,8 +1054,7 @@ var __async = (__this, __arguments, generator) => {
       setup(props, { slots }) {
         const hexToRgb = (color) => {
           const reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
-          if (!reg.test(color))
-            return "";
+          if (!reg.test(color)) return "";
           color = color.toLowerCase();
           if (color.length === 4) {
             color = "#" + color.slice(1).split("").map((char) => char + char).join("");
@@ -1076,8 +1070,7 @@ var __async = (__this, __arguments, generator) => {
           return str.replace(/([a-z])([A-Z])/g, (_, p1, p2) => p1 + "-" + p2.toLowerCase());
         };
         const mapThemeVarsToCSSVars = (themeVars) => {
-          if (!themeVars)
-            return;
+          if (!themeVars) return;
           const cssVars = {};
           const primaryColor = themeVars == null ? void 0 : themeVars.primaryColor;
           if (primaryColor) {
@@ -1275,13 +1268,11 @@ var __async = (__this, __arguments, generator) => {
         width: 0
       });
       const rootStyle = vue.computed(() => {
-        if (state.fixed)
-          return { height: `${state.height}px` };
+        if (state.fixed) return { height: `${state.height}px` };
         return {};
       });
       const stickyStyle = vue.computed(() => {
-        if (!state.fixed)
-          return {};
+        if (!state.fixed) return {};
         return {
           top: `${props.top}px`,
           height: `${state.height}px`,
@@ -1505,8 +1496,7 @@ var __async = (__this, __arguments, generator) => {
       };
       const getMarginStyle = (isLast) => {
         const style = {};
-        if (!props.gutter)
-          return style;
+        if (!props.gutter) return style;
         const marginRight = `${getMargin(Array.isArray(props.gutter) ? props.gutter[0] : props.gutter)}`;
         const marginBottom = `${getMargin(Array.isArray(props.gutter) ? props.gutter[1] : props.gutter)}`;
         if (isLast) {
@@ -2205,7 +2195,8 @@ var __async = (__this, __arguments, generator) => {
       unactiveColor: { default: "" },
       activeColor: { default: "" },
       safeAreaInsetBottom: { type: Boolean, default: false },
-      placeholder: { type: Boolean, default: false }
+      placeholder: { type: Boolean, default: false },
+      beforeSwitch: { type: Function, default: () => true }
     },
     emits: ["tabSwitch", "update:modelValue"],
     setup(__props, { emit: __emit }) {
@@ -2216,11 +2207,15 @@ var __async = (__this, __arguments, generator) => {
       const nutTabbarRef = vue.ref(null);
       const activeIndex = vue.ref(props.modelValue);
       const { children, linkChildren } = useChildren(TABBAR_KEY);
-      const changeIndex = (index, active) => {
+      const changeIndex = (index, active) => __async(this, null, function* () {
+        const res = yield props.beforeSwitch(children[index], active);
+        if (res === false) {
+          return Promise.reject();
+        }
         activeIndex.value = active;
         emit("update:modelValue", active);
         emit("tabSwitch", children[index], active);
-      };
+      });
       linkChildren({ props, activeIndex, changeIndex });
       vue.watch(
         () => props.modelValue,
@@ -2287,8 +2282,7 @@ var __async = (__this, __arguments, generator) => {
         };
       });
       const content = vue.computed(() => {
-        if (props.dot)
-          return;
+        if (props.dot) return;
         const value = props.value;
         const max = props.max;
         if (typeof value === "number" && typeof max === "number") {
@@ -2347,23 +2341,26 @@ var __async = (__this, __arguments, generator) => {
         return ((_a = props.name) != null ? _a : index.value) === parent.activeIndex.value;
       });
       const activeColor = vue.computed(() => active.value ? parent.props.activeColor : parent.props.unactiveColor);
-      const change = () => {
+      const change = () => __async(this, null, function* () {
         var _a, _b, _c;
-        const key = (_a = props.name) != null ? _a : index.value;
-        parent.changeIndex(index.value, key);
-        if ((_b = parent.children[index.value]) == null ? void 0 : _b.href) {
-          window.location.href = parent.children[index.value].href;
-          return;
-        }
-        if ((_c = parent.children[index.value]) == null ? void 0 : _c.to) {
-          const to = parent.children[index.value].to;
-          if (to && router) {
-            router.push(to);
-          } else {
-            location.replace(to);
+        try {
+          const key = (_a = props.name) != null ? _a : index.value;
+          yield parent.changeIndex(index.value, key);
+          if ((_b = parent.children[index.value]) == null ? void 0 : _b.href) {
+            window.location.href = parent.children[index.value].href;
+            return;
           }
+          if ((_c = parent.children[index.value]) == null ? void 0 : _c.to) {
+            const to = parent.children[index.value].to;
+            if (to && router) {
+              router.push(to);
+            } else {
+              location.replace(to);
+            }
+          }
+        } catch (err) {
         }
-      };
+      });
       return (_ctx, _cache) => {
         return vue.openBlock(), vue.createElementBlock("div", {
           class: vue.normalizeClass(["nut-tabbar-item", { "nut-tabbar-item__icon--unactive": !active.value }]),
@@ -2490,10 +2487,8 @@ var __async = (__this, __arguments, generator) => {
         if (!index && index !== 0) {
           return;
         }
-        if (index < 0)
-          index = 0;
-        if (index > state.listHeight.length - 2)
-          index = state.listHeight.length - 2;
+        if (index < 0) index = 0;
+        if (index > state.listHeight.length - 2) index = state.listHeight.length - 2;
         state.codeIndex = index;
         state.scrollTop = state.listHeight[index];
       };
@@ -2706,19 +2701,15 @@ var __async = (__this, __arguments, generator) => {
         return Math.max(1, num);
       });
       const select = (curPage, isSelect) => {
-        if (curPage > countRef.value || curPage < 1)
-          return;
-        if (curPage != modelValue.value)
-          emit("update:modelValue", curPage);
-        if (isSelect)
-          emit("change", curPage);
+        if (curPage > countRef.value || curPage < 1) return;
+        if (curPage != modelValue.value) emit("update:modelValue", curPage);
+        if (isSelect) emit("change", curPage);
       };
       const setPage = (number, text, active = false) => {
         return { number, text, active };
       };
       const pages = vue.computed(() => {
-        if (mode.value == "simple")
-          return;
+        if (mode.value == "simple") return;
         let items = [];
         const pageCount = countRef.value;
         const pageSize = +showPageSize.value;
@@ -2955,13 +2946,11 @@ var __async = (__this, __arguments, generator) => {
     };
     const touchMethods = {
       onTouchStart(event) {
-        if (!props.swipeable)
-          return;
+        if (!props.swipeable) return;
         touch.start(event);
       },
       onTouchMove(event) {
-        if (!props.swipeable)
-          return;
+        if (!props.swipeable) return;
         touch.move(event);
         touchState.moving = true;
         setoffset(touch.deltaX.value, touch.deltaY.value);
@@ -3111,10 +3100,8 @@ var __async = (__this, __arguments, generator) => {
       const currentIndex = vue.ref(props.modelValue || 0);
       const findTabsIndex = (value) => {
         let index = titles.value.findIndex((item) => item.paneKey == value);
-        if (titles.value.length == 0)
-          ;
-        else if (index == -1)
-          ;
+        if (titles.value.length == 0) ;
+        else if (index == -1) ;
         else {
           currentIndex.value = index;
         }
@@ -3289,8 +3276,7 @@ var __async = (__this, __arguments, generator) => {
         };
       });
       const titleStyle = vue.computed(() => {
-        if (!props.titleGutter)
-          return {};
+        if (!props.titleGutter) return {};
         const px = pxCheck(props.titleGutter);
         if (props.direction === "vertical") {
           return { paddingTop: px, paddingBottom: px };
@@ -3806,7 +3792,7 @@ var __async = (__this, __arguments, generator) => {
       const format = (value) => {
         const { min, max, step } = props;
         value = Math.max(+min, Math.min(value, +max));
-        return Math.round(value / +step) * +step;
+        return Math.round((value - +min) / +step) * +step + +min;
       };
       const isSameValue = (newValue, oldValue) => JSON.stringify(newValue) === JSON.stringify(oldValue);
       const handleOverlap = (value) => {
@@ -3838,12 +3824,18 @@ var __async = (__this, __arguments, generator) => {
             state.value.width = rect.width;
             state.value.height = rect.height;
             let clientX, clientY;
-            if (Taro.getEnv() === Taro.ENV_TYPE.WEB) {
-              clientX = event.clientX;
-              clientY = event.clientY;
-            } else {
-              clientX = event.touches[0].clientX;
-              clientY = event.touches[0].clientY;
+            switch (Taro.getEnv()) {
+              case Taro.ENV_TYPE.WEB:
+                clientX = event.clientX;
+                clientY = event.clientY;
+                break;
+              case Taro.ENV_TYPE.SWAN:
+                clientX = event.changedTouches[0].clientX;
+                clientY = event.changedTouches[0].clientY;
+                break;
+              default:
+                clientX = event.touches[0].clientX;
+                clientY = event.touches[0].clientY;
             }
             let delta = clientX - rect.left;
             let total = rect.width;
@@ -6727,8 +6719,7 @@ var __async = (__this, __arguments, generator) => {
       };
       const handleClick = () => {
         var _a, _b;
-        if (pDisabled.value)
-          return;
+        if (pDisabled.value) return;
         if (checked.value && state.partialSelect) {
           state.partialSelect = false;
           emitChange(checked.value, (_a = slots.default) == null ? void 0 : _a.call(slots)[0].children);
@@ -6925,8 +6916,7 @@ var __async = (__this, __arguments, generator) => {
         const options = cursor[fields.children];
         const value = defaultValues2[columnIndex];
         let index = options.findIndex((columnItem) => columnItem[fields.value] === value);
-        if (index === -1)
-          index = 0;
+        if (index === -1) index = 0;
         cursor = cursor[fields.children][index];
         columnIndex++;
         formatted.push(options);
@@ -7162,6 +7152,9 @@ var __async = (__this, __arguments, generator) => {
           return false;
         }
       };
+      const isCurrPick = (index) => {
+        return index == state.currIndex;
+      };
       const setTransform = (translateY = 0, type, time = DEFAULT_DURATION, deg) => {
         if (type === "end") {
           touchTime.value = time;
@@ -7241,6 +7234,7 @@ var __async = (__this, __arguments, generator) => {
       return __spreadProps(__spreadValues(__spreadValues({}, vue.toRefs(state)), vue.toRefs(props)), {
         setRollerStyle,
         isHidden,
+        isCurrPick,
         roller,
         onTouchStart,
         onTouchMove,
@@ -7284,7 +7278,8 @@ var __async = (__this, __arguments, generator) => {
             item && item[_ctx.fieldNames.text] && !_ctx.threeDimensional ? (vue.openBlock(), vue.createElementBlock("view", {
               key: 1,
               class: vue.normalizeClass(["nut-picker-roller-item-tile", {
-                [item[_ctx.fieldNames.className]]: item[_ctx.fieldNames.className]
+                [item[_ctx.fieldNames.className]]: item[_ctx.fieldNames.className],
+                "nut-picker-roller-item-selected": _ctx.isCurrPick(index + 1)
               }]),
               style: vue.normalizeStyle({ height: _ctx.pxCheck(_ctx.optionHeight), lineHeight: _ctx.pxCheck(_ctx.optionHeight) })
             }, vue.toDisplayString(item[_ctx.fieldNames.text]), 7)) : vue.createCommentVNode("", true)
@@ -7940,8 +7935,7 @@ var __async = (__this, __arguments, generator) => {
       const emitChange = (value, event) => {
         let output_value = fixedDecimalPlaces(value);
         emit("update:modelValue", output_value, event);
-        if (Number(props.modelValue) !== Number(output_value))
-          emit("change", output_value, event);
+        if (Number(props.modelValue) !== Number(output_value)) emit("change", output_value, event);
       };
       const addAllow = (value = Number(props.modelValue)) => {
         return value < Number(props.max) && !disabled.value;
@@ -7950,8 +7944,7 @@ var __async = (__this, __arguments, generator) => {
         return value > Number(props.min) && !disabled.value;
       };
       const reduce = (event) => {
-        if (disabled.value)
-          return;
+        if (disabled.value) return;
         emit("reduce", event);
         let output_value = Number(props.modelValue) - Number(props.step);
         if (reduceAllow() && output_value >= Number(props.min)) {
@@ -7962,8 +7955,7 @@ var __async = (__this, __arguments, generator) => {
         }
       };
       const add = (event) => {
-        if (disabled.value)
-          return;
+        if (disabled.value) return;
         emit("add", event);
         let output_value = Number(props.modelValue) + Number(props.step);
         if (addAllow() && output_value <= Number(props.max)) {
@@ -7974,17 +7966,13 @@ var __async = (__this, __arguments, generator) => {
         }
       };
       const focus = (event) => {
-        if (disabled.value)
-          return;
-        if (props.readonly)
-          return;
+        if (disabled.value) return;
+        if (props.readonly) return;
         emit("focus", event);
       };
       const blur = (event) => {
-        if (disabled.value)
-          return;
-        if (props.readonly)
-          return;
+        if (disabled.value) return;
+        if (props.readonly) return;
         const input = event.target;
         let value = Number(input.value);
         if (value < Number(props.min)) {
@@ -8231,8 +8219,7 @@ var __async = (__this, __arguments, generator) => {
       };
       const clear = (event) => {
         event.stopPropagation();
-        if (disabled.value)
-          return;
+        if (disabled.value) return;
         emit("update:modelValue", "", event);
         emit("clear", "", event);
       };
@@ -8402,8 +8389,7 @@ var __async = (__this, __arguments, generator) => {
         };
       });
       const handleClick = () => {
-        if (checked.value || disabled.value)
-          return;
+        if (checked.value || disabled.value) return;
         parent.updateValue(props.label);
       };
       const reverseState = vue.computed(() => parent.position.value === "left");
@@ -8524,8 +8510,7 @@ var __async = (__this, __arguments, generator) => {
         emit("change", value);
       };
       const onClick = (e, index) => {
-        if (disabled.value || props.readonly)
-          return;
+        if (disabled.value || props.readonly) return;
         let value = 0;
         if (index === 1 && props.modelValue === index) {
           value = 0;
@@ -8838,13 +8823,11 @@ var __async = (__this, __arguments, generator) => {
         emitChange(value, event);
       };
       const focus = (event) => {
-        if (disabled.value || props.readonly)
-          return;
+        if (disabled.value || props.readonly) return;
         emit("focus", event);
       };
       const blur = (event) => {
-        if (disabled.value || props.readonly)
-          return;
+        if (disabled.value || props.readonly) return;
         const input = event.target;
         const value = input.value;
         emitChange(value, event);
@@ -9506,8 +9489,7 @@ var __async = (__this, __arguments, generator) => {
         });
       };
       const onDelete = (file, index) => {
-        if (disabled.value)
-          return;
+        if (disabled.value) return;
         clearUploadQueue(index);
         funInterceptor(props.beforeDelete, {
           args: [file, fileList.value],
@@ -10320,13 +10302,11 @@ var __async = (__this, __arguments, generator) => {
       };
       const touch = useTouch();
       const onTouchStart = (event) => {
-        if (props.disabled)
-          return;
+        if (props.disabled) return;
         touch.start(event);
       };
       const onTouchMove = (event) => {
-        if (props.disabled)
-          return;
+        if (props.disabled) return;
         touch.move(event);
         if (touch.isHorizontal()) {
           lockClick.value = true;
@@ -11246,8 +11226,7 @@ var __async = (__this, __arguments, generator) => {
       });
       let updateType = "";
       const onClick = (event) => {
-        if (props.loading || disabled.value)
-          return;
+        if (props.loading || disabled.value) return;
         const value = isActive.value ? props.inactiveValue : props.activeValue;
         updateType = "click";
         emit("update:modelValue", value);
@@ -11634,8 +11613,7 @@ var __async = (__this, __arguments, generator) => {
               break;
             }
           }
-          if (sig)
-            foldAvatar(element);
+          if (sig) foldAvatar(element);
         };
         const observer2 = new MutationObserver(callback);
         observer2.observe(element, config);
@@ -11806,8 +11784,7 @@ var __async = (__this, __arguments, generator) => {
         nodes = Array.from(nodes).filter((node) => node.nodeType === 1);
         const start = nodes[0];
         nodes.forEach((node, index) => __async(this, null, function* () {
-          if (!node)
-            return;
+          if (!node) return;
           useTaroRect(node).then(
             (rect) => {
               if (rect && rect.height) {
@@ -12232,11 +12209,9 @@ var __async = (__this, __arguments, generator) => {
           let wrapWidth = 0;
           let offsetWidth = 0;
           getRect(`.wrap${state.id}`).then((rect) => {
-            if ((rect == null ? void 0 : rect.width) > 0)
-              wrapWidth = rect.width;
+            if ((rect == null ? void 0 : rect.width) > 0) wrapWidth = rect.width;
             getRect(`.content${state.id}`).then((rect2) => {
-              if ((rect2 == null ? void 0 : rect2.width) > 0)
-                offsetWidth = rect2.width;
+              if ((rect2 == null ? void 0 : rect2.width) > 0) offsetWidth = rect2.width;
               state.isCanScroll = props.scrollable == null ? offsetWidth > wrapWidth : props.scrollable;
               if (state.isCanScroll) {
                 state.wrapWidth = wrapWidth;
@@ -12328,8 +12303,7 @@ var __async = (__this, __arguments, generator) => {
         }
       });
       const updateSlotChild = () => {
-        if (slots.default)
-          state.scrollList = [].concat(slots.default()[0].children);
+        if (slots.default) state.scrollList = [].concat(slots.default()[0].children);
       };
       const watchSlots = () => {
         setTimeout(() => {
@@ -12524,16 +12498,8 @@ var __async = (__this, __arguments, generator) => {
         }
         return {};
       });
-      const src = vue.computed(() => {
-        if (props.image.startsWith("https://") || props.image.startsWith("http://") || props.image.startsWith("//")) {
-          return props.image;
-        } else {
-          return defaultStatus[props.image];
-        }
-      });
-      const descriptionText = vue.computed(() => {
-        return props.description || translate("noData");
-      });
+      const src = vue.computed(() => /^https?:\/\/|^\/\//.test(props.image) ? props.image : defaultStatus[props.image]);
+      const descriptionText = vue.computed(() => props.description || translate("noData"));
       return (_ctx, _cache) => {
         return vue.openBlock(), vue.createElementBlock("view", _hoisted_1$C, [
           vue.createElementVNode("view", {
@@ -12622,8 +12588,7 @@ var __async = (__this, __arguments, generator) => {
       const { index, parent } = useParent(STEPS_KEY);
       const status = vue.computed(() => {
         const activeIndex = index.value + 1;
-        if (activeIndex < +parent.props.current)
-          return "finish";
+        if (activeIndex < +parent.props.current) return "finish";
         return activeIndex === +parent.props.current ? "process" : "wait";
       });
       const dot = vue.computed(() => parent.props.progressDot);
@@ -12846,8 +12811,7 @@ var __async = (__this, __arguments, generator) => {
         return active;
       };
       const move = ({ pace = 0, offset = 0, isEmit = false }) => {
-        if (childCount.value <= 1)
-          return;
+        if (childCount.value <= 1) return;
         const { active } = state;
         const targetActive = getActive(pace);
         const targetOffset = getOffset(targetActive, offset);
@@ -12919,8 +12883,7 @@ var __async = (__this, __arguments, generator) => {
         });
       };
       const autoplay = () => {
-        if (Number(props.autoPlay) <= 0 || childCount.value <= 1)
-          return;
+        if (Number(props.autoPlay) <= 0 || childCount.value <= 1) return;
         stopAutoPlay();
         state.autoplayTimer = setTimeout(() => {
           next();
@@ -12928,8 +12891,7 @@ var __async = (__this, __arguments, generator) => {
         }, Number(props.autoPlay));
       };
       const init = (..._0) => __async(this, [..._0], function* (active = +props.initPage) {
-        if (!container.value)
-          return;
+        if (!container.value) return;
         stopAutoPlay();
         useTaroRect(container).then(
           (rect) => {
@@ -12948,10 +12910,8 @@ var __async = (__this, __arguments, generator) => {
         );
       });
       const onTouchStart = (e) => {
-        if (props.isStopPropagation)
-          e.stopPropagation();
-        if (!props.touchable)
-          return;
+        if (props.isStopPropagation) e.stopPropagation();
+        if (!props.touchable) return;
         touch.start(e);
         state.touchTime = Date.now();
         stopAutoPlay();
@@ -12968,8 +12928,7 @@ var __async = (__this, __arguments, generator) => {
         }
       };
       const onTouchEnd = () => {
-        if (!props.touchable || !state.moving)
-          return;
+        if (!props.touchable || !state.moving) return;
         const speed = delTa.value / (Date.now() - state.touchTime);
         const isShouldMove = Math.abs(speed) > 0.3 || Math.abs(delTa.value) > +(size.value / 2).toFixed(2);
         if (isShouldMove && isCorrectDirection.value) {
@@ -13451,8 +13410,7 @@ var __async = (__this, __arguments, generator) => {
       vue.watch(
         () => props.initNo,
         (val) => {
-          if (val != state.active)
-            setActive(val);
+          if (val != state.active) setActive(val);
         }
       );
       vue.onMounted(() => {
@@ -14095,8 +14053,7 @@ var __async = (__this, __arguments, generator) => {
   }
   const Countup = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$r]]);
   const getTimeStamp = (timeStr) => {
-    if (!timeStr)
-      return Date.now();
+    if (!timeStr) return Date.now();
     let t = timeStr;
     t = +t > 0 ? +t : t.toString().replace(/-/g, "/");
     return new Date(t).getTime();
@@ -14199,8 +14156,7 @@ var __async = (__this, __arguments, generator) => {
       const initTime = () => {
         handleEndTime.value = Number(props.endTime);
         diffTime.value = Date.now() - getTimeStamp(props.startTime);
-        if (!counting.value)
-          counting.value = true;
+        if (!counting.value) counting.value = true;
         tick();
       };
       const tick = () => {
@@ -15461,8 +15417,7 @@ var __async = (__this, __arguments, generator) => {
         }
       };
       const pxToNumber = (value) => {
-        if (!value)
-          return 0;
+        if (!value) return 0;
         const match = value.match(/^\d*(\.\d*)?/);
         return match ? Number(match[0]) : 0;
       };
@@ -15840,8 +15795,7 @@ var __async = (__this, __arguments, generator) => {
       });
       const maskStyle = (index) => {
         const { offset, maskWidth, maskHeight } = props;
-        if (!maskRect[index])
-          return {};
+        if (!maskRect[index]) return {};
         const { width, height, left: left2, top } = maskRect[index];
         const center = [left2 + width / 2, top + height / 2];
         const w = Number(maskWidth ? maskWidth : width);
@@ -16137,10 +16091,8 @@ var __async = (__this, __arguments, generator) => {
         }
       });
       const transformData = (data) => {
-        if (!Array.isArray(data))
-          throw new TypeError("params muse be array.");
-        if (!data.length)
-          return [];
+        if (!Array.isArray(data)) throw new TypeError("params muse be array.");
+        if (!data.length) return [];
         data.forEach((item) => {
           if (!item.title) {
             console.warn("[NutUI] <Address> 请检查数组选项的 title 值是否有设置 ,title 为必填项 .");
@@ -16189,8 +16141,7 @@ var __async = (__this, __arguments, generator) => {
         }
       };
       const getTabName = (item, index) => {
-        if (item && item.name)
-          return item.name;
+        if (item && item.name) return item.name;
         if (tabIndex.value < index && item) {
           return item.name;
         } else {
@@ -16243,8 +16194,7 @@ var __async = (__this, __arguments, generator) => {
         const copyExistAdd = props.existAddress;
         let prevExistAdd = {};
         copyExistAdd.forEach((list) => {
-          if (list && list.selectedAddress)
-            prevExistAdd = list;
+          if (list && list.selectedAddress) prevExistAdd = list;
           list.selectedAddress = false;
         });
         item.selectedAddress = true;
@@ -18055,8 +18005,7 @@ var __async = (__this, __arguments, generator) => {
         event.stopPropagation();
       };
       const clickItem = (event) => {
-        if (moveRef.value)
-          return;
+        if (moveRef.value) return;
         emit("clickItem", event, props.item);
         event.stopPropagation();
       };
@@ -18919,8 +18868,7 @@ var __async = (__this, __arguments, generator) => {
     setup(props, { emit }) {
       const translate = useLocale(cN);
       const conEllipsis = vue.computed(() => {
-        if (props.ellipsis)
-          return props.ellipsis;
+        if (props.ellipsis) return props.ellipsis;
         return props.headerType == "complex" ? 6 : 2;
       });
       const clickOperate = (t) => {
@@ -19304,8 +19252,7 @@ var __async = (__this, __arguments, generator) => {
         });
       };
       const canvas2dDraw = (ctx) => {
-        if (!ctx)
-          return;
+        if (!ctx) return;
         const { width, height, x, y } = drawImage.value;
         const { moveX, moveY, scale, angle, displayWidth, displayHeight } = state;
         ctx.clearRect(0, 0, displayWidth, displayHeight);
@@ -19345,8 +19292,7 @@ var __async = (__this, __arguments, generator) => {
         const { moveX, moveY, scale, angle, displayWidth, displayHeight, cropperWidth } = state;
         const { cropperCanvasContext } = canvasAll;
         let ctx = cropperCanvasContext;
-        if (!ctx)
-          return;
+        if (!ctx) return;
         ctx.clearRect(0, 0, displayWidth, displayHeight);
         easySetFillStyle(systemInfo, ctx, "#666");
         ctx.fillRect(0, 0, displayWidth, displayHeight);
@@ -19730,7 +19676,7 @@ var __async = (__this, __arguments, generator) => {
       }
     });
   }
-  const version = "4.3.10";
+  const version = "4.3.11";
   const taro_build = { install, version, Locale };
   exports2.ActionSheet = ActionSheet;
   exports2.Address = Address;

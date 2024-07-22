@@ -40,7 +40,7 @@ var __async = (__this, __arguments, generator) => {
 import Taro, { eventCenter, getCurrentInstance } from "@tarojs/taro";
 import { toRef, ref, computed, onMounted, toRefs, openBlock, createElementBlock, normalizeClass, toDisplayString, createCommentVNode, createTextVNode, createElementVNode, normalizeStyle, withModifiers, Fragment, renderList, renderSlot } from "vue";
 import { c as createComponent } from "../component-DQf3CENX.js";
-import { a as preventDefault } from "../util-7oDGftbO.js";
+import { a as preventDefault } from "../util-2G3mRQeF.js";
 import { u as useTouch } from "../index-I8tfW3Kf.js";
 import { u as useTaroRect } from "../index-m0Wcof-q.js";
 import { u as useFormDisabled } from "../common-BH7uB7Cn.js";
@@ -216,7 +216,7 @@ const _sfc_main = create({
     const format = (value) => {
       const { min, max, step } = props;
       value = Math.max(+min, Math.min(value, +max));
-      return Math.round(value / +step) * +step;
+      return Math.round((value - +min) / +step) * +step + +min;
     };
     const isSameValue = (newValue, oldValue) => JSON.stringify(newValue) === JSON.stringify(oldValue);
     const handleOverlap = (value) => {
@@ -248,12 +248,18 @@ const _sfc_main = create({
           state.value.width = rect.width;
           state.value.height = rect.height;
           let clientX, clientY;
-          if (Taro.getEnv() === Taro.ENV_TYPE.WEB) {
-            clientX = event.clientX;
-            clientY = event.clientY;
-          } else {
-            clientX = event.touches[0].clientX;
-            clientY = event.touches[0].clientY;
+          switch (Taro.getEnv()) {
+            case Taro.ENV_TYPE.WEB:
+              clientX = event.clientX;
+              clientY = event.clientY;
+              break;
+            case Taro.ENV_TYPE.SWAN:
+              clientX = event.changedTouches[0].clientX;
+              clientY = event.changedTouches[0].clientY;
+              break;
+            default:
+              clientX = event.touches[0].clientX;
+              clientY = event.touches[0].clientY;
           }
           let delta = clientX - rect.left;
           let total = rect.width;
