@@ -354,6 +354,7 @@ export default create({
 
       state.defScale = cropperWidth / (isPortrait ? drawImg.width : drawImg.height)
       resetScale()
+      await Promise.resolve()
       draw()
     }
 
