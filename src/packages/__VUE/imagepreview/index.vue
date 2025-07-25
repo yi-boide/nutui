@@ -112,6 +112,7 @@ export default create({
       }
       return props.images
     })
+
     // 设置当前选中第几个
     const setActive = (active: number) => {
       if (active !== state.active) {
@@ -126,10 +127,10 @@ export default create({
         done: () => closeDone()
       })
     }
+
     // 执行关闭
     const closeDone = () => {
       state.showPop = false
-
       emit('close')
     }
 
