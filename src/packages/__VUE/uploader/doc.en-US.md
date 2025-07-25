@@ -275,7 +275,7 @@ const formData = {
 
 <script setup>
 import { ref } from 'vue'
-// source file https://github.com/jdf2e/nutui/blob/v4/src/packages/__VUE/uploader/uploader.ts#L51
+// source file https://github.com/jd-opensource/nutui/blob/v4/src/packages/__VUE/uploader/uploader.ts#L51
 const beforeXhrUpload = (xhr, options) => {
   if (options.method.toLowerCase() == 'put') {
     xhr.send(options.sourceFile)

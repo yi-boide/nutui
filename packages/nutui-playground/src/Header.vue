@@ -60,7 +60,7 @@ function toggleDark() {
         <Download />
       </button>
       <button title="View on GitHub" class="github">
-        <a href="https://github.com/jdf2e/nutui" target="_blank">
+        <a href="https://github.com/jd-opensource/nutui" target="_blank">
           <GitHub />
         </a>
       </button>

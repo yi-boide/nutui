@@ -118,7 +118,7 @@ app.use(Uploader)
 
 <script setup>
 import { ref } from 'vue';
-    // source file https://github.com/jdf2e/nutui/blob/v4/src/packages/__VUE/uploader/uploader.ts#L6
+    // source file https://github.com/jd-opensource/nutui/blob/v4/src/packages/__VUE/uploader/uploader.ts#L6
     const beforeXhrUpload = (taroUploadFile, options) => {
       //taroUploadFile  是 Taro.uploadFile ， 你也可以自定义设置其它函数
       const uploadTask = taroUploadFile({

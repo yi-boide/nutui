@@ -9,8 +9,8 @@ body:
         这个表单仅用于错误报告。对于在使用中遇到的问题，请优先使用以下方式寻找解决方案：
 
         - 查看组件文档 [@nutui/nutui](https://nutui.jd.com/h5/vue/4x/#/zh-CN/guide/intro) [@nutui/nutui-taro](https://nutui.jd.com/taro/vue/4x/#/zh-CN/guide/intro)
-        - 在 [Issue](https://github.com/jdf2e/nutui/issues) 列表中查找解决方案
-        - 查看 [常见问题 QA](https://github.com/jdf2e/nutui/issues/2461)
+        - 在 [Issue](https://github.com/jd-opensource/nutui/issues) 列表中查找解决方案
+        - 查看 [常见问题 QA](https://github.com/jd-opensource/nutui/issues/2461)
 
         注意：如果你发现一个已关闭 issue 的问题在最新版本中仍然存在，请不要在旧 issue 下面留言，而应该使用当前的表单创建新的 issue。
 

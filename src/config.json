@@ -43,19 +43,19 @@
         "eName": "Internationalization"
       },
       {
-        "name": "https://github.com/jdf2e/nutui/issues/1671",
+        "name": "https://github.com/jd-opensource/nutui/issues/1671",
         "cName": "贡献指南",
         "eName": "Contributing",
         "isLink": true
       },
       {
-        "name": "https://github.com/jdf2e/nutui/releases",
+        "name": "https://github.com/jd-opensource/nutui/releases",
         "cName": "更新日志",
         "eName": "Changelog",
         "isLink": true
       },
       {
-        "name": "https://github.com/jdf2e/nutui/issues/2461",
+        "name": "https://github.com/jd-opensource/nutui/issues/2461",
         "cName": "常见问题",
         "eName": "QA",
         "isLink": true

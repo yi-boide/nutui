@@ -1,6 +1,6 @@
 <!--
 请务必阅读贡献者指南:
-https://github.com/jdf2e/nutui/issues/1671
+https://github.com/jd-opensource/nutui/issues/1671
 -->
 
 <!-- PULL REQUEST TEMPLATE -->
@@ -30,5 +30,5 @@ https://github.com/jdf2e/nutui/issues/1671
 
 **这个 PR 是否已自测:**
 
-- [ ] 自测 Vite 脚手架使用 [测试仓库](https://github.com/jdf2e/nutui-demo/tree/dev/vite)
-- [ ] 自测 Taro 脚手架使用小程序 & Taro-H5 [测试仓库](https://github.com/jdf2e/nutui-demo/tree/dev/taro)
+- [ ] 自测 Vite 脚手架使用 [测试仓库](https://github.com/jd-opensource/nutui-demo/tree/dev/vite)
+- [ ] 自测 Taro 脚手架使用小程序 & Taro-H5 [测试仓库](https://github.com/jd-opensource/nutui-demo/tree/dev/taro)

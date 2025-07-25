@@ -2,7 +2,7 @@
 
 ### Intro
 
-Install the [@nutui/icons-vue](https://github.com/jdf2e/nutui-icons) package independently. Two usage modes are provided (SVG on-demand usage and IconFont full usage).
+Install the [@nutui/icons-vue](https://github.com/jd-opensource/nutui-icons) package independently. Two usage modes are provided (SVG on-demand usage and IconFont full usage).
 
 ### Install
 

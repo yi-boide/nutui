@@ -37,7 +37,7 @@ function getNutResolved(name: string, options: NutUIResolverOptions): ComponentR
 /**
  * Resolver for NutUI 4.0+
  *
- * @link https://github.com/jdf2e/nutui
+ * @link https://github.com/jd-opensource/nutui
  */
 export default function NutUIResolver(options: NutUIResolverOptions = {}): ComponentResolver {
   return {

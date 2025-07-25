@@ -6,7 +6,7 @@
     "nutui",
     "vue",
     "resolver",
-    "jdf2e"
+    "jd-opensource"
   ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -35,14 +35,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jdf2e/nutui.git",
+    "url": "https://github.com/jd-opensource/nutui.git",
     "directory": "packages/nutui-auto-import-resolver"
   },
-  "homepage": "https://github.com/jdf2e/nutui/tree/v4/packages/nutui-auto-import-resolver",
+  "homepage": "https://github.com/jd-opensource/nutui/tree/v4/packages/nutui-auto-import-resolver",
   "bugs": {
-    "url": "https://github.com/jdf2e/nutui/issues"
+    "url": "https://github.com/jd-opensource/nutui/issues"
   },
-  "author": "jdf2e",
+  "author": "jd-opensource",
   "license": "MIT",
   "devDependencies": {
     "rimraf": "^6.0.0",

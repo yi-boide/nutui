@@ -172,7 +172,7 @@ import './assets/font/iconfont.css'
 <IconFont font-class-name="my-icon" class-prefix="my-icon" name="extra" />
 ```
 
-自定义 iconfont [Demo 示例](https://github.com/jdf2e/nutui-demo/blob/master/vite/src/App.vue#L15)
+自定义 iconfont [Demo 示例](https://github.com/jd-opensource/nutui-demo/blob/master/vite/src/App.vue#L15)
 
 ## API
 

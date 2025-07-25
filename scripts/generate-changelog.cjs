@@ -18,6 +18,6 @@ const getLatestRelease = (cl) => {
 }
 let res = getLatestRelease(changelog)
 if (res) {
-  res += `\n> [CHANGELOG](https://github.com/jdf2e/nutui/blob/v4/CHANGELOG.md)\n`
+  res += `\n> [CHANGELOG](https://github.com/jd-opensource/nutui/blob/v4/CHANGELOG.md)\n`
   fs.writeFileSync('.github/changelog.md', res)
 }

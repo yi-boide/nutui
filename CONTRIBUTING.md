@@ -2,7 +2,7 @@
 
 ## 1、选择参与贡献的议题
 
-- 带有 [PR Welcome](https://github.com/jdf2e/nutui/issues?q=is%3Aissue+is%3Aopen+label%3A%22PR+Welcome%22) 标签的 issue，它主要包含了以下两种类型：
+- 带有 [PR Welcome](https://github.com/jd-opensource/nutui/issues?q=is%3Aissue+is%3Aopen+label%3A%22PR+Welcome%22) 标签的 issue，它主要包含了以下两种类型：
   - 1. 可复现的 bug
   - 2. 计划实现的功能
 - #2220

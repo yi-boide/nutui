@@ -6,13 +6,13 @@
 <p align="center">JD-style mobile UI components based on Vue2 & Vue3 that support users to develop H5 and mini-programs.</p>
 
 <p align="center">
-  <a href="https://github.com/jdf2e/nutui/pulls">
+  <a href="https://github.com/jd-opensource/nutui/pulls">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome">
   </a>
-  <a href="https://app.codecov.io/gh/jdf2e/nutui">
-    <img src="https://img.shields.io/codecov/c/github/jdf2e/nutui" alt="coverage"/>
+  <a href="https://app.codecov.io/gh/jd-opensource/nutui">
+    <img src="https://img.shields.io/codecov/c/github/jd-opensource/nutui" alt="coverage"/>
   </a>
-  <a href="https://github.com/jdf2e/nutui/blob/v4/LICENSE">
+  <a href="https://github.com/jd-opensource/nutui/blob/v4/LICENSE">
     <img src="https://img.shields.io/npm/l/@nutui/nutui.svg" alt="license"/>
   </a>
   <a href="https://www.npmjs.com/package/@nutui/nutui">
@@ -23,20 +23,20 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/jdf2e/nutui/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/jdf2e/nutui" alt="GitHub contributors">
+  <a href="https://github.com/jd-opensource/nutui/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/jd-opensource/nutui" alt="GitHub contributors">
   </a>
-  <a href="https://github.com/jdf2e/nutui/commits">
-    <img src="https://img.shields.io/github/commit-activity/m/jdf2e/nutui" alt="GitHub commit activity">
+  <a href="https://github.com/jd-opensource/nutui/commits">
+    <img src="https://img.shields.io/github/commit-activity/m/jd-opensource/nutui" alt="GitHub commit activity">
   </a>
-  <a href="https://github.com/jdf2e/nutui/issues">
-    <img src="https://img.shields.io/github/issues-closed/jdf2e/nutui" alt="GitHub closed issues">
+  <a href="https://github.com/jd-opensource/nutui/issues">
+    <img src="https://img.shields.io/github/issues-closed/jd-opensource/nutui" alt="GitHub closed issues">
   </a>
-  <a href="https://github.com/jdf2e/nutui/commits">
-    <img src="https://img.shields.io/github/commits-since/jdf2e/nutui/latest/v4" alt="GitHub commits since latest release (by date)">
+  <a href="https://github.com/jd-opensource/nutui/commits">
+    <img src="https://img.shields.io/github/commits-since/jd-opensource/nutui/latest/v4" alt="GitHub commits since latest release (by date)">
   </a>
-  <a href="https://github.com/jdf2e/nutui/releases">
-    <img src="https://img.shields.io/github/release-date/jdf2e/nutui" alt="GitHub Release Date">
+  <a href="https://github.com/jd-opensource/nutui/releases">
+    <img src="https://img.shields.io/github/release-date/jd-opensource/nutui" alt="GitHub Release Date">
   </a>
   <a href="https://www.jsdelivr.com/package/npm/@nutui/nutui">
     <img src="https://data.jsdelivr.com/v1/package/npm/@nutui/nutui/badge" alt="jsdelivr">
@@ -87,14 +87,14 @@ Site: [nutui.jd.com](https://nutui.jd.com)
 
 | Project | Description | Version |
 | --- | --- | --- |
-| [@nutui/nutui](https://github.com/jdf2e/nutui) | NutUI H5 | ![nutui](https://img.shields.io/npm/v/@nutui/nutui.svg?label=%20) |
-| [@nutui/nutui-taro](https://github.com/jdf2e/nutui) | NutUI Taro | ![nutui](https://img.shields.io/npm/v/@nutui/nutui-taro.svg?label=%20) |
-| [@nutui/icons-vue](https://github.com/jdf2e/nutui-icons) | icons of `@nutui/nutui` | ![nutui](https://img.shields.io/npm/v/@nutui/icons-vue.svg?label=%20) |
-| [@nutui/icons-vue-taro](https://github.com/jdf2e/nutui-icons) | icons of `@nutui/nutui-taro` | ![nutui](https://img.shields.io/npm/v/@nutui/icons-vue-taro.svg?label=%20) |
+| [@nutui/nutui](https://github.com/jd-opensource/nutui) | NutUI H5 | ![nutui](https://img.shields.io/npm/v/@nutui/nutui.svg?label=%20) |
+| [@nutui/nutui-taro](https://github.com/jd-opensource/nutui) | NutUI Taro | ![nutui](https://img.shields.io/npm/v/@nutui/nutui-taro.svg?label=%20) |
+| [@nutui/icons-vue](https://github.com/jd-opensource/nutui-icons) | icons of `@nutui/nutui` | ![nutui](https://img.shields.io/npm/v/@nutui/icons-vue.svg?label=%20) |
+| [@nutui/icons-vue-taro](https://github.com/jd-opensource/nutui-icons) | icons of `@nutui/nutui-taro` | ![nutui](https://img.shields.io/npm/v/@nutui/icons-vue-taro.svg?label=%20) |
 | [@nutui/touch-emulator](packages/nutui-touch-emulator) | Using NutUI in desktop browsers | ![nutui](https://img.shields.io/npm/v/@nutui/touch-emulator.svg?label=%20) |
 | [@nutui/auto-import-resolver](packages/nutui-auto-import-resolver) | resolver of `unplugin-auto-import` | ![nutui](https://img.shields.io/npm/v/@nutui/auto-import-resolver.svg?label=%20) |
 | [@nutui/playground](packages/nutui-playground) | NutUI Playground | - |
-| [nutui-demo](https://github.com/jdf2e/nutui-demo) | NutUI Demo | - |
+| [nutui-demo](https://github.com/jd-opensource/nutui-demo) | NutUI Demo | - |
 
 ### Community Ecosystem
 
@@ -112,7 +112,7 @@ Site: [nutui.jd.com](https://nutui.jd.com)
 
 NutUI has been used in our production environment, and widely used in the industry for cross-platform development.
 <p>
-<img src="https://raw.githubusercontent.com/jdf2e/nutui-user-cases/master/user-cases.jpg" alt="NutUI" />
+<img src="https://raw.githubusercontent.com/jd-opensource/nutui-user-cases/master/user-cases.jpg" alt="NutUI" />
 </p>
 <p><a href="https://nutui.jd.com/#/case">View more cases</a></p>
 
@@ -126,40 +126,40 @@ NutUI has been used in our production environment, and widely used in the indust
 
 ### NutUI Community
 
-[*Welcome To NutUI  Community*](https://github.com/jdf2e/nutui/issues/1789)
+[*Welcome To NutUI  Community*](https://github.com/jd-opensource/nutui/issues/1789)
 
 ### Contribute to NutUI
 
 There are some choices of contributing to NutUI as follows, solving issues, fixing bugs, adding new components, i18n, UI customization, platform and cross-end adaptation, etc.
 
-You are very welcome to contribute code to NutUI. Before your pull requests, please read [*NutUI Developer Contributing Guide*](https://github.com/jdf2e/nutui/issues/1671).
+You are very welcome to contribute code to NutUI. Before your pull requests, please read [*NutUI Developer Contributing Guide*](https://github.com/jd-opensource/nutui/issues/1671).
 
 ## Issue & Discussion
 
-[Report issues to NutUI](https://nutui.jd.com/nutui-issue-helper/?repo=jdf2e/nutui&lang=en)
+[Report issues to NutUI](https://nutui.jd.com/nutui-issue-helper/?repo=jd-opensource/nutui&lang=en)
 
 > It is highly recommended to read [*How To Ask Questions The Smart Way*](http://www.catb.org/~esr/faqs/smart-questions.html), [*How To Ask Questions Of GitHub Community*](https://github.com/seajs/seajs/issues/545) and [*How to Report Bugs Effectively*](https://www.chiark.greenend.org.uk/~sgtatham/bugs.html), then you can get understanding and help more easily.
 
-[NutUI Discussion](https://github.com/jdf2e/nutui/discussions)
+[NutUI Discussion](https://github.com/jd-opensource/nutui/discussions)
 
 If you have any ideas, questions or suggestions, you can share your opinions here.
 
 ## Contributors
 
-Thanks to all the following [developers](https://github.com/jdf2e/nutui/graphs/contributors) who have contributed code to NutUI.
+Thanks to all the following [developers](https://github.com/jd-opensource/nutui/graphs/contributors) who have contributed code to NutUI.
 
-<a href="https://github.com/jdf2e/nutui/graphs/contributors">
+<a href="https://github.com/jd-opensource/nutui/graphs/contributors">
   <img src="https://opencollective.com/nutui/contributors.svg?width=890&button=false" alt="contributors">
 </a>
 
 ## Release Notes
 
-[Release](https://github.com/jdf2e/nutui/releases).
+[Release](https://github.com/jd-opensource/nutui/releases).
 
 ## License
 
-[MIT](https://github.com/jdf2e/nutui/blob/v4/LICENSE)
+[MIT](https://github.com/jd-opensource/nutui/blob/v4/LICENSE)
 
 ## GitHub Stargazers
 
-![stargazers](https://starchart.cc/jdf2e/nutui.svg)
+![stargazers](https://starchart.cc/jd-opensource/nutui.svg)

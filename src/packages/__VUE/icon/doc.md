@@ -2,7 +2,7 @@
 
 ### 介绍
 
-独立安装 [@nutui/icons-vue](https://github.com/jdf2e/nutui-icons) 图标组件包。提供两种使用方式（Svg 按需使用、IconFont 全量使用）。
+独立安装 [@nutui/icons-vue](https://github.com/jd-opensource/nutui-icons) 图标组件包。提供两种使用方式（Svg 按需使用、IconFont 全量使用）。
 
 ### 安装
 
