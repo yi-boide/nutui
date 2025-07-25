@@ -1,3 +1,14 @@
+- ## vv4.3.14-beta.0
+
+`2025-07-25`
+
+Bug Fixes
+
+- fix: 横竖屏切换时height侦听事件增加
+- fix(elevator): resolve error while switching index and selection (#3282)
+- fix: ios avatarcropper cannot render picture
+- fix(dialog): closeOnClickOverlay default props
+
 - ## v4.3.13
 
 `2024-09-14`
