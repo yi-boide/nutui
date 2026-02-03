@@ -112,7 +112,7 @@ Site: [nutui.jd.com](https://nutui.jd.com)
 
 NutUI has been used in our production environment, and widely used in the industry for cross-platform development.
 <p>
-<img src="https://raw.githubusercontent.com/jd-opensource/nutui-user-cases/master/user-cases.jpg" alt="NutUI" />
+<img src="https://github.com/jdf2e/nutui-user-cases/blob/master/user-cases.jpg" alt="NutUI" />
 </p>
 <p><a href="https://nutui.jd.com/#/case">View more cases</a></p>
 
