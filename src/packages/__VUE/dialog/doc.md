@@ -211,6 +211,7 @@ const teleportClick = (teleport) => {
 | overlayStyle | 自定义遮罩样式 | CSSProperties | - |
 | popClass | 自定义 `popup` 弹框类名 | string | - |
 | popStyle | 自定义 `popup` 弹框样式 | CSSProperties | - |
+| zIndex | 自定义 `popup` 层级 | string \| number | 2000 |
 | onUpdate | 更新 | boolean | `false` |
 | onOk | 确定按钮回调 | Function | - |
 | onCancel | 取消按钮回调 | Function | - |
