@@ -149,7 +149,7 @@ const _sfc_main = create({
     onMounted(() => {
       Taro.nextTick(() => {
         setTimeout(() => {
-          if (Taro.getEnv() === "WEAPP" || Taro.getEnv() === "JD") {
+          if (["WEAPP", "JD", "TT", "SWAN", "ALIPAY", "QQ", "ASCF"].includes(Taro.getEnv())) {
             Taro.createSelectorQuery().select("#" + canvasSetId).fields(
               {
                 node: true,
@@ -201,7 +201,7 @@ const _sfc_main = create({
 const _hoisted_1 = {
   class: /* @__PURE__ */ normalizeClass(["nut-signature-inner", "spcanvas_WEAPP"])
 };
-const _hoisted_2 = ["id", "canvasId"];
+const _hoisted_2 = ["id", "canvasId", "canvas-id"];
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_nut_button = resolveComponent("nut-button");
   return openBlock(), createElementBlock("view", {
@@ -213,6 +213,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         ref: "spcanvas",
         class: "spcanvas",
         canvasId: _ctx.canvasSetId,
+        "canvas-id": _ctx.canvasSetId,
         type: "2d",
         "disable-scroll": "true",
         onTouchstart: _cache[0] || (_cache[0] = (...args) => _ctx.startEventHandler && _ctx.startEventHandler(...args)),
@@ -221,7 +222,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         onTouchleave: _cache[3] || (_cache[3] = (...args) => _ctx.leaveEventHandler && _ctx.leaveEventHandler(...args))
       }, null, 40, _hoisted_2)
     ]),
-    createTextVNode(),
+    _cache[6] || (_cache[6] = createTextVNode()),
     createVNode(_component_nut_button, {
       class: "nut-signature-btn",
       type: "default",
@@ -232,7 +233,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       ]),
       _: 1
     }),
-    createTextVNode(),
+    _cache[7] || (_cache[7] = createTextVNode()),
     createVNode(_component_nut_button, {
       class: "nut-signature-btn",
       type: "primary",

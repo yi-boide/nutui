@@ -38,7 +38,7 @@ const _sfc_main = create({
   props: __spreadProps(__spreadValues({}, popupProps), {
     closeOnClickOverlay: {
       type: Boolean,
-      default: true
+      default: false
     },
     title: {
       type: String,
@@ -146,7 +146,10 @@ const _sfc_main = create({
       }
     };
     const onClickOverlay = () => {
+      console.log(1);
+      console.log(props.closeOnClickOverlay);
       if (props.closeOnClickOverlay) {
+        console.log(2);
         closed("");
       }
     };
@@ -278,6 +281,7 @@ class DialogOptions {
     __publicField(this, "lockScroll", true);
     __publicField(this, "cancelAutoClose", true);
     __publicField(this, "okAutoClose", true);
+    __publicField(this, "zIndex", 2e3);
   }
 }
 class DialogFunction {
